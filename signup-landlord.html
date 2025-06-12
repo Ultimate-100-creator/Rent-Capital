@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landlord Signup - Rent Capital</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;5.00;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"/>
+
+    <link rel="stylesheet" href="Styles/signup-landlord.css">
+    <link rel="stylesheet" href="Styles/header.css">
+</head>
+<body class="signup-page">
+
+    <!-- Decorative Background Blobs -->
+    <div class="background-blob blob-top-left"></div>
+    <div class="background-blob blob-bottom-right"></div>
+
+    <!-- Minimal Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z" /></svg>
+                <span>Rent Capital</span>
+            </a>
+            <div class="signup-prompt">
+                <span>Already have an account!</span>
+                <a href="signin.html" class="btn-signin">Sign in</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="signup-form-main">
+        <div class="signup-form-container">
+            <div class="form-header">
+                <button type="button" class="btn btn-back hidden" aria-label="Go back">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12,20L4,12L12,4L13.5,5.5L8,11H20Z"/></svg>
+                    <span>Back</span>
+                </button>
+                <div class="progress-bar">
+                    <div class="step active" id="progress-step-1"><div class="step-icon"></div></div>
+                    <div class="progress-line"></div>
+                    <div class="step" id="progress-step-2"><div class="step-icon"></div></div>
+                    <div class="progress-line"></div>
+                    <div class="step" id="progress-step-3"><div class="step-icon"></div></div>
+                </div>
+            </div>
+
+            <form id="landlord-signup-form">
+                <!-- Step 1: Email -->
+                <div class="form-step" id="step-1">
+                    <h1 class="step-title">Continue with email or another provider</h1>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-full" id="btn-email-continue" disabled>Continue with Email</button>
+                    <div class="separator">Or</div>
+                    <button type="button" class="btn btn-secondary btn-full btn-social"><img src="https://i.imgur.com/512KaY1.png" alt="Google icon"> Continue with Google</button>
+                    <button type="button" class="btn btn-secondary btn-full btn-social"><img src="https://i.imgur.com/e5g0Q62.png" alt="Apple icon"> Continue with Apple</button>
+                    <p class="form-terms">By creating an account you are agreeing to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+                </div>
+
+                <!-- Step 2: Personal & Company Details -->
+                <div class="form-step hidden" id="step-2">
+                    <h1 class="step-title">Enter your details to continue</h1>
+                     <div class="form-grid">
+                        <div class="form-group"><label for="firstName">First name *</label><input type="text" id="firstName" class="form-input" placeholder="Enter your first name" required></div>
+                        <div class="form-group"><label for="lastName">Last name *</label><input type="text" id="lastName" class="form-input" placeholder="Enter your last name" required></div>
+                        <div class="form-group"><label for="companyName">Company name</label><input type="text" id="companyName" class="form-input" placeholder="Enter your company na..."></div>
+                        <div class="form-group"><label for="numUnits">Number of units *</label><input type="number" id="numUnits" class="form-input" placeholder="Enter your number of un..." required></div>
+                        <div class="form-group full-width"><label for="phone">Phone number *</label><input type="tel" id="phone" class="form-input" required></div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-full" id="btn-details-continue" disabled>Continue</button>
+                </div>
+
+                <!-- Step 3: Password & Finish -->
+                <div class="form-step hidden" id="step-3">
+                    <h1 class="step-title">Create your password</h1>
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="password">Create password *</label>
+                            <div class="password-wrapper">
+                                <input type="password" id="password" class="form-input" placeholder="Enter your password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                                <button type="button" class="password-toggle" aria-label="Show password">
+                                    <!-- Show Icon (Visible by default) -->
+                                    <svg class="icon-show" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Z"/></svg>
+                                    <!-- Hide Icon (Hidden by default) -->
+                                    <svg class="icon-hide hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M528-480q-20-0-34-14t-14-34q0-20 14-34t34-14q20 0 34 14t14 34q0 20-14 34t-34 14Zm-48 240-60-60q-12 5-25 7.5t-27 2.5q-75 0-127.5-52.5T180-500q0-44 20-80.5t52-61.5L192-702q-51 34-93 88t-63 114q54 137 174 218.5T480-200q61 0 119-14t111-40ZM852-66 312-606l42-42 540 540-42 42Zm-102-102-60-60q21-27 34-56.5t16-61.5q0-75-52.5-127.5T480-680q-32 0-61 9.5T366-648L306-708q44-24 93-35.5t105-11.5q146 0 266 81.5T920-500q-21 53-53 98.5t-74 81.5Z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="confirmPassword">Confirm password *</label>
+                             <div class="password-wrapper">
+                                <input type="password" id="confirmPassword" class="form-input" placeholder="Enter your password" required>
+                                <button type="button" class="password-toggle" aria-label="Show password">
+                                    <!-- Show Icon (Visible by default) -->
+                                    <svg class="icon-show" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Z"/></svg>
+                                    <!-- Hide Icon (Hidden by default) -->
+                                    <svg class="icon-hide hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M528-480q-20-0-34-14t-14-34q0-20 14-34t34-14q20 0 34 14t14 34q0 20-14 34t-34 14Zm-48 240-60-60q-12 5-25 7.5t-27 2.5q-75 0-127.5-52.5T180-500q0-44 20-80.5t52-61.5L192-702q-51 34-93 88t-63 114q54 137 174 218.5T480-200q61 0 119-14t111-40ZM852-66 312-606l42-42 540 540-42 42Zm-102-102-60-60q21-27 34-56.5t16-61.5q0-75-52.5-127.5T480-680q-32 0-61 9.5T366-648L306-708q44-24 93-35.5t105-11.5q146 0 266 81.5T920-500q-21 53-53 98.5t-74 81.5Z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="password-hint">Password must be at least 8 characters and contain 1 number, both upper & lowercase letters</p>
+                    <div class="checkbox-group"><input type="checkbox" id="terms" required><label for="terms">I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</label></div>
+                    <div class="checkbox-group"><input type="checkbox" id="sms"><label for="sms">I agree to receive SMS marketing communications.</label></div>
+                    <button type="submit" class="btn btn-primary btn-full" id="btn-finish" disabled>Create Account</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- NEW: Success Modal -->
+    <div class="modal-overlay hidden" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <!-- Checkmark SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/></svg>
+            </div>
+            <h2 class="modal-title">Account Created!</h2>
+            <p class="modal-text">Your account has been successfully created. You can now proceed to your landlord dashboard.</p>
+            <button class="btn btn-primary" id="btn-go-dashboard">Go to Dashboard</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="signup-landlord.js"></script>
+    <script src="general.js"></script>
+</body>
+</html>

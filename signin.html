@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Rent Capital</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link to a new CSS file for this page -->
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/signin.css">
+</head>
+<body class="signin-page">
+
+    <!-- Decorative Background Blobs -->
+    <div class="background-blob blob-top-left"></div>
+    <div class="background-blob blob-bottom-right"></div>
+    <div class="background-blob blob-bottom-left-small"></div>
+
+    <!-- Minimal Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z" /></svg>
+                <span>Rent Capital</span>
+            </a>
+            <div class="signup-prompt">
+                <span>Don't have an account?</span>
+                <a href="signup.html" class="btn-signup">Sign up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content: Centered Form -->
+    <main class="signin-main">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <h1>Sign in</h1>
+                <p>Sign in to your rental management software.</p>
+            </div>
+            
+            <form action="#" class="signin-form">
+                <div class="input-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                
+                <button type="submit" class="btn-primary">Continue with Email</button>
+            </form>
+            
+            <div class="divider">
+                <span>Or</span>
+            </div>
+
+            <div class="social-login-buttons">
+                <button class="btn-social">
+                    <img src="https://i.imgur.com/b4I7v36.png" alt="Google icon">
+                    <span>Continue with Google</span>
+                </button>
+                <button class="btn-social">
+                    <img src="https://i.imgur.com/B1Qk39D.png" alt="Apple icon">
+                    <span>Continue with Apple</span>
+                </button>
+                <button class="btn-social">
+                    <img src="https://i.imgur.com/CAti6dY.png" alt="Facebook icon">
+                    <span>Continue with Facebook</span>
+                </button>
+            </div>
+
+            <p class="recaptcha-notice">
+                This site is protected by reCAPTCHA and the Google 
+                <a href="#">Privacy Policy</a> and 
+                <a href="#">Terms of Service</a> apply.
+            </p>
+        </div>
+    </main>
+
+</body>
+</html>

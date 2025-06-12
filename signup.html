@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Account Type - Rent Capital</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link to a new CSS file for this page -->
+    <link rel="stylesheet" href="styles/signup.css">
+    <link rel="stylesheet" href="styles/header.css">
+</head>
+<body class="signup-page">
+
+    <!-- Decorative Background Blobs -->
+    <div class="background-blob blob-top-left"></div>
+    <div class="background-blob blob-bottom-right"></div>
+    <div class="background-blob blob-bottom-left-small"></div>
+
+    <!-- Minimal Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z" /></svg>
+                <span>Rent Capital</span>
+            </a>
+            <div class="signup-prompt">
+                <span>Already have an account!</span>
+                <a href="signin.html" class="btn-signin">Sign in</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="signup-main">
+        <div class="signup-container content-wrapper">
+            <div class="content-header">
+                <h1>Account type</h1>
+                <p>Choose the user account type that suits your needs.</p>
+            </div>
+
+            <div class="account-type-grid" id="account-type-grid">
+                
+                <!-- Card 1: Tenant -->
+                <div class="account-card">
+                    <div class="card-pills">
+                        <span class="pill pill-gray">Free account</span>
+                        <span class="pill-icon">?</span>
+                    </div>
+                    <div class="card-icon-bg">
+                        <svg viewBox="0 0 24 24"><path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,18V19.5H19V18C19,15.34 13.67,14 12,14C10.33,14 5,15.34 5,18Z" /></svg>
+                    </div>
+                    <h2 class="card-title">I'm renting</h2>
+                    <p class="card-subtitle">Tenant</p>
+                </div>
+
+                <!-- Card 2: Property Manager -->
+                <div class="account-card">
+                    <div class="card-pills">
+                        <span class="pill pill-gray">Free Account</span>
+                        <span class="pill-icon">?</span>
+                    </div>
+                    <div class="card-icon-bg">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M760-400v-260L560-800 360-660v60h-80v-100l280-200 280 200v300h-80ZM560-800Zm20 160h40v-40h-40v40Zm-80 0h40v-40h-40v40Zm80 80h40v-40h-40v40Zm-80 0h40v-40h-40v40ZM280-220l278 76 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-93-31 22-78 81 27q17 5 40 8t68 4q0-11-6.5-21T578-354l-234-86h-64v220ZM40-80v-440h304q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87v40L560-60l-280-78v58H40Zm80-80h80v-280h-80v280Z"/></svg>
+                    </div>
+                    <h2 class="card-title">I manage rentals</h2>
+                    <p class="card-subtitle">Property Manager</p>
+                </div>
+
+                <!-- Card 3: Landlord -->
+                <div class="account-card">
+                    <div class="card-pills">
+                        <span class="pill pill-gray">Free Account</span>
+                        <span class="pill-icon">?</span>
+                    </div>
+                    <div class="card-icon-bg">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-120v-560h160v-160h400v320h160v400H520v-160h-80v160H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm160 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z"/></svg>
+                    </div>
+                    <h2 class="card-title">I Rent</h2>
+                    <p class="card-subtitle">Landlord</p>
+                </div>
+            </div>
+
+            <div class="content-footer">
+                <p>I'm a <strong>Property Owner</strong>. My properties are managed by Property Managers.</p>
+                <button class="btn btn-primary" disabled>Next</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="signup.js"></script>
+</body>
+</html>

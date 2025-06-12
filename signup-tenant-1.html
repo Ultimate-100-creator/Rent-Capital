@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Rent Capital</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/signup-tenant-1.css">
+</head>
+<body>
+
+    <!-- Decorative Background Blobs -->
+    <div class="background-blob blob-top-left"></div>
+    <div class="background-blob blob-bottom-right"></div>
+    <div class="background-blob blob-bottom-left-small"></div>
+
+    <!-- Minimal Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z" /></svg>
+                <span>Rent Capital</span>
+            </a>
+            <div class="signup-prompt">
+                <span>Already have an account!</span>
+                <a href="signin.html" class="btn-signin">Sign in</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="signup-main-container">
+    
+        <!-- Decorative Background Blobs -->
+        <div class="background-blob blob-right-large"></div>
+        <div class="background-blob blob-bottom-left-wave"></div>
+        <div class="background-blob blob-middle-left-small"></div>
+    
+        <!-- Content Wrapper -->
+        <div class="signup-content-wrapper">
+            <div class="step-header">
+                <button class="btn-back">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path></svg>
+                    <span>BACK</span>
+                </button>
+                <div class="progress-bar">
+                    <div class="step active" data-step="1">
+                        <span class="step-icon"></span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <span class="step-icon"></span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <span class="step-icon"></span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <span class="step-icon"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- STEP 1: LOCATION -->
+            <div id="step-location" class="signup-step">
+                <div class="content-header">
+                    <h1>Where do you want to live?</h1>
+                    <p>Enter the city to let us find you the perfect fit among verified houses and apartments for rent.</p>
+                </div>
+                
+                <form class="location-form">
+                    <div class="form-group">
+                        <label for="location-input">Location *</label>
+                        <input type="text" id="location-input" placeholder="Start typing the address and then select from the...">
+                    </div>
+                    <button type="button" class="btn-use-location">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"></path></svg>
+                        <span>Use my current location</span>
+                    </button>
+                </form>
+        
+                <div class="content-footer">
+                    <button id="btn-location-continue" class="btn btn-primary" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- STEP 2: RENTAL TYPE (Initially Hidden) -->
+            <div id="step-rental-type" class="signup-step hidden">
+                <div class="content-header">
+                    <h1>What type of rental are you looking for?</h1>
+                    <p>Select one or multiple types of rental units you are looking for. You can change it anytime later.</p>
+                </div>
+
+                <div class="rental-type-grid">
+                    <button class="rental-type-option">Room</button>
+                    <button class="rental-type-option">Apartment</button>
+                    <button class="rental-type-option">Multiplex</button>
+                    <button class="rental-type-option">Single-Family</button>
+                    <button class="rental-type-option">Townhouse</button>
+                    <button class="rental-type-option">Condo</button>
+                    <button class="rental-type-option">Commercial</button>
+                    <button class="rental-type-option">Storage</button>
+                    <button class="rental-type-option">Parking Space</button>
+                    <button class="rental-type-option">Suite</button>
+                    <button class="rental-type-option">Mobile Home</button>
+                    <button class="rental-type-option">Villa</button>
+                    <button class="rental-type-option">University Apartment</button>
+                    <button class="rental-type-option">Residence Hall</button>
+                </div>
+
+                <div class="content-footer">
+                    <button id="btn-rental-type-continue" class="btn btn-primary" disabled>Continue</button>
+                </div>
+            </div>
+
+            <!-- STEP 3: RENTAL CRITERIA (NEW) -->
+            <div id="step-criteria" class="signup-step hidden">
+                <div class="content-header">
+                    <h1>Specify the rental criteria</h1>
+                    <p>Make your rental search more detailed and let TenantCloud find you a perfect home.</p>
+                </div>
+
+                <form class="criteria-form">
+                    <div class="criteria-group">
+                        <label class="criteria-label">Beds</label>
+                        <div class="options-container" id="beds-options">
+                            <button type="button" class="criteria-option active">Any</button>
+                            <button type="button" class="criteria-option">Studio</button>
+                            <button type="button" class="criteria-option">1</button>
+                            <button type="button" class="criteria-option">2</button>
+                            <button type="button" class="criteria-option">3</button>
+                            <button type="button" class="criteria-option">4</button>
+                            <button type="button" class="criteria-option">5+</button>
+                        </div>
+                    </div>
+                    <div class="criteria-group">
+                        <label class="criteria-label">Baths</label>
+                        <div class="options-container" id="baths-options">
+                            <button type="button" class="criteria-option active">Any</button>
+                            <button type="button" class="criteria-option">1</button>
+                            <button type="button" class="criteria-option">2</button>
+                            <button type="button" class="criteria-option">3</button>
+                            <button type="button" class="criteria-option">4</button>
+                            <button type="button" class="criteria-option">5+</button>
+                        </div>
+                    </div>
+                    <div class="criteria-group range-group">
+                        <label class="criteria-label">Min</label>
+                        <div class="range-slider-container">
+                            <input type="range" id="price-slider" min="0" max="500000" step="5000" value="5000">
+                            <div class="range-output">
+                                <span class="price-value">- ₦<span id="price-output">5,000</span></span>
+                                <span class="price-label">per month</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="criteria-group toggle-group">
+                        <label class="criteria-label">Additional</label>
+                        <div class="toggle-container">
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="pets-allowed">
+                                <span class="slider"></span>
+                            </label>
+                            <span>Pets allowed</span>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="content-footer">
+                    <button id="btn-finish" class="btn btn-primary">Finish</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/signup-tenant-1.js" defer></script>
+</body>
+</html>

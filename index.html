@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replication - Rent Capital</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/code.css">
+    <link rel="stylesheet" href="styles/footer.css">
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <!-- Re-used Header from index.html -->
+        <header id="site-header" class="site-header">
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 151 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M25.438 16.875c0 1.172-.336 2.266-1.008 3.25- .672 .985-1.625 1.75-2.695 2.219 1.07.47 1.984 1.156 2.71 2.031.728.875 1.095 1.844 1.095 2.875 0 .844-.218 1.657-.656 2.407-.438.75-1.063 1.344-1.844 1.75-.781.406-1.656.609-2.594.609- .937 0-1.78-.203-2.53-.609-.75-.406-1.344-.992-1.782-1.742-.437-.75-.656-1.562-.656-2.406 0-1.031.312-1.992 1.008-2.867.695-.875 1.515-1.562 2.46-2.031-.875-.5-1.657-1.242-2.313-2.227-.656-.984-.984-2.078-.984-3.25 0-1.203.352-2.312 1.055-3.312.703-1.008 1.625-1.766 2.719-2.258.906-.344 1.812-.531 2.75-.531.968 0 1.875.187 2.75.531 1.094.492 2.016 1.25 2.719 2.258.703 1 .055 2.11.055 3.312Zm-5.594 10.875c0 .5.133 1 .375 1.407.242.406.625.687 1.125.843.5.157 1.031.25 1.625.25.563 0 1.094-.094 1.594-.25.5-.156.875-.437 1.125-.843.25-.407.375-.907.375-1.407 0-.531-.133-1.008-.375-1.437-.242-.43- .625-.758-1.125-.969-.5-.219-1.03-.313-1.593-.313-.594 0-1.125.094-1.625.313-.5.211-.883.54-1.125.97-.242.429-.375.906-.375 1.437Zm.063-10.75c0 .563.14.969.437 1.313.297.344.75.562 1.281.656.531.094 1.125.156 1.75.156.625 0 1.22-.062 1.75-.156.531-.094.969-.313 1.28-.656.313-.344.47-.75.47-1.313 0-.562-.157-1.047-.47-1.437-.312-.39- .75-.68-1.28-.844-.53-.164-1.125-.25-1.75-.25-.625 0-1.219.086-1.75.25-.531.164-.984.453-1.28.844-.298.39-.438.875-.438 1.437ZM38.305 26.312V12.875h2.938v16.125h-3.407l-9-10.844v10.844h-2.937V12.875h3.406l9 10.844v-7.406Z M52.212 12.875h3.125v16.25h-3.125v-16.25Zm.031 20c.406.375.875.562 1.406.562.531 0 1-.187 1.406-.562.406-.375.625-.844.625-1.406 0-.563-.219-1.031-.625-1.406-.406-.375-.875-.563-1.406-.563-.531 0-1 .188-1.406.563-.406.375-.625.843-.625 1.406 0 .562.219 1.031.625 1.406ZM67.337 29.125V12.875h3.125v16.25h-3.125Z M81.556 26.312V12.875h2.937v16.125h-3.406l-9-10.844v10.844h-2.938V12.875h3.407l9 10.844v-7.406Z M92.587 29.125V12.875h10.375v2.5h-7.25v4.5h6.625v2.5h-6.625v4.25h7.563v2.5h-10.688Z M115.15 29.125v-13h-4.125v-2.5h11.375v2.5h-4.125v13h-3.125Z M125.775 29.125V12.875h3.125v16.25h-3.125Z M139.712 19.312v9.813h-3.125V12.875h5.063c1.687 0 3.054.43 4.093 1.28.985.805 1.469 1.961 1.469 3.407 0 1.094-.32 2.062-.937 2.875-.618.812-1.485 1.383-2.594 1.687l3.75 7h-3.5l-3.219-6.812Zm0-3.937h2.125c.875 0 1.57-.218 2.063-.656.492-.437.75-.992.75-1.656 0-.688-.258-1.25-.75-1.688-.493-.437-1.188-.656-2.063-.656h-2.125v4.656Z" fill="#333"/><path d="M20 38.5c10.23 0 18.5-8.27 18.5-18.5S30.23 1.5 20 1.5 1.5 9.77 1.5 20 9.77 38.5 20 38.5Z" stroke="#4CAF50" stroke-width="3"/></svg>
+                    <h1 class="logo-text">Rent Capital</h1>
+                </a>
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="tenants.html" class="nav-link active">For Tenants</a>
+                    <a href="lanlords.html" class="nav-link">For Landlords</a>
+                    <a href="features.html" class="nav-link">Features</a>
+                    <a href="signup.html" class="nav-link">Get started</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="tooltip-wrapper"><button id="search-trigger-btn" class="header-action-btn" aria-label="Open Search" data-tooltip="Search"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path></svg></button></div>
+                    <div class="header-auth-desktop"><a href="signin.html" class="btn btn-login">Log in</a><a href="signup.html" class="btn btn-signup">Sign up</a></div>
+                    <button id="menu-btn" type="button" class="mobile-menu-toggle"><span class="sr-only">Open menu</span><svg id="menu-open-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16m-7 6h7"></path></svg><svg id="menu-close-icon" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"></path></svg></button>
+                </div>
+            </div>
+            <div class="mobile-menu-dropdown">
+                <nav class="mobile-dropdown-nav">
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="tenants.html" class="mobile-nav-link active">For Tenants</a>
+                    <a href="lanlords.html" class="mobile-nav-link">For Landlords</a>
+                    <a href="features.html" class="mobile-nav-link">Features</a>
+                    <a href="signup.html" class="mobile-nav-link">Get started</a></nav>
+                <div class="mobile-dropdown-actions"><a href="signin.html" class="btn btn-login">Log in</a><a href="signup.html" class="btn btn-signup">Sign up</a></div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- All sections will go here -->
+            <section class="hero-section fade-in-section">
+                <div class="container hero-container">
+                    <div class="hero-content">
+                        <p class="hero-eyebrow">Rent Capital</p>
+                        <h1 class="hero-title">Rent Smarter, Not Harder.</h1>
+                        <p class="hero-description">Pay rent in instalments and manage properties with ease. Rent Capital simplifies the rental experience for everyone.</p>
+                        <div class="hero-form-wrapper">
+                            <form action="#" class="hero-form">
+                                <input type="email" placeholder="Enter your email to start" class="hero-form-input" />
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </form>
+                            <a href="#" class="hero-demo-link">View demo ></a>
+                        </div>
+                      </div>
+                    <div class="hero-image-wrapper">
+                        <div class="hero-blob-1"></div>
+                        <div class="hero-blob-2"></div>
+                        <img class="hero-image" src="https://i.imgur.com/u75xMy7.png" alt="Happy property manager">
+                    </div>
+                </div>
+            </section>
+
+            <section class="search-bar-section fade-in-section">
+              <div class="container search-bar-container">
+                  <form action="#" class="search-form-inline">
+                      <!-- Input for Name/Keyword -->
+                      <div class="input-wrapper">
+                          <svg class="input-icon" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+                          <input type="text" placeholder="Search by name or keyword" class="search-bar-input">
+                      </div>
+
+                      <!-- Input for Location -->
+                      <div class="input-wrapper">
+                          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M480-301q99-80 149.5-154T680-594q0-90-56-148t-144-58q-88 0-144 58t-56 148q0 65 50.5 139T480-301Zm0 101Q339-304 269.5-402T200-594q0-125 78-205.5T480-880q124 0 202 80.5T760-594q0 94-69.5 192T480-200Zm0-320q33 0 56.5-23.5T560-600q0-33-23.5-56.5T480-680q-33 0-56.5 23.5T400-600q0 33 23.5 56.5T480-520ZM200-80v-80h560v80H200Zm280-520Z"/></svg>
+                          <input type="text" placeholder="Location" class="search-bar-input">
+                          <svg class="input-arrow" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                      </div>
+                  </form>
+              </div>
+            </section>
+
+            <section class="process-section fade-in-section">
+              <div class="container process-container">
+                <h2 class="process-title">Where are you in your rental process?</h2>
+                <p class="process-subtitle">From first-time landlords to experienced residential investors, we help you keep your passive income, passive.</p>
+                <div class="process-buttons">
+                  <button class="btn btn-process" data-modal-target="process-tenants-modal">I'm Looking for Tenants</button>
+                  <button class="btn btn-process" data-modal-target="process-landlords-modal">I'm Managing Tenants</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="cta-section fade-in-section">
+                <div class="container cta-container">
+                    <!-- Left Column: Text Content -->
+                    <div class="cta-content">
+                        <p class="cta-eyebrow">RENTAL PROPERTY MANAGEMENT SOFTWARE</p>
+                        <h2 class="cta-title">Simplify how you manage your rentals. <strong>with Rent Capital.</strong></h2>
+                        <p class="cta-description">Get leads, screen tenants, create leases, and collect rent — all in one place. <strong>Free for landlords.</strong></p>
+                        
+                        <div class="cta-choice-group">
+                            <p class="choice-label">How many units do you manage?</p>
+                            <div class="choice-buttons" id="unit-choice-buttons">
+                                <button class="choice-btn active">1-2</button>
+                                <button class="choice-btn">3-9</button>
+                                <button class="choice-btn">10+</button>
+                                <button class="choice-btn">None yet</button>
+                            </div>
+                        </div>
+
+                        <a href="signup.html" class="btn btn-dark-blue">Sign Up for Free</a>
+                    </div>
+
+                    <!-- Right Column: Video/Image Content -->
+                    <div class="cta-visual">
+                        <div class="video-player-wrapper">
+                            <img src="https://i.imgur.com/fUazYjB.png" alt="A demonstration of creating a state-specific lease agreement in the software." loading="lazy" class="video-thumbnail">
+                            <button class="play-button" aria-label="Play video">
+                                <svg class="play-icon" viewBox="0 0 24 24"><path d="M8,5.14V19.14L19,12.14L8,5.14Z" /></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <!--<section class="social-proof-section fade-in-section">
+                <div class="container">
+                    <div class="logo-grid">
+                        <div class="logo-item"><img src="https://i.imgur.com/gO1Pq1u.png" alt="Entrepreneur"></div>
+                        <div class="logo-item"><img src="https://i.imgur.com/XFqB5g1.png" alt="Chicago Tribune"></div>
+                        <div class="logo-item"><img src="https://i.imgur.com/V2vXyYq.png" alt="MSN"></div>
+                        <div class="logo-item"><img src="https://i.imgur.com/0iK2Fvj.png" alt="MarketWatch"></div>
+                        <div class="logo-item"><img src="https://i.imgur.com/tACxOQv.png" alt="Forbes"></div>
+                        <div class="logo-item"><img src="https://i.imgur.com/kS9eCgq.png" alt="Capterra"></div>
+                        <div class="logo-item"><img src="https://i.imgur.com/z4bQd4R.png" alt="Reviews.com"></div>
+                        <div class="logo-item"><img src="https://i.imgur.com/J3t5VwI.png" alt="TechCrunch"></div>
+                        <div class="logo-item"><img src="https://i.imgur.com/G9L2p23.png" alt="The Business Journals"></div>
+                        <div class="logo-item"><img src="https://i.imgur.com/B9B0A3J.png" alt="The Washington Post"></div>
+                    </div>
+                </div>
+            </section>-->
+
+            <section class="info-section fade-in-section">
+              <div class="container info-container">
+                  <div class="info-header">
+                      <h2 class="info-title">What is Rent Capital?</h2>
+                      <p class="info-subtitle">Rent Capital is an innovative property management app designed to revolutionize how rent is paid and managed. We empower tenants to pay their rent in flexible instalments, easing financial burdens. For landlords, we offer a secure and streamlined platform to track payments, manage properties, and ensure financial stability.</p>
+                  </div>
+                  
+                  <div class="info-grid">
+                      <!-- Card for Tenants -->
+                      <div class="info-card" data-modal-target="tenants-modal">
+                          <div class="card-icon-wrapper">
+                              <!-- Tenant Icon (placeholder) -->
+                              <svg viewBox="0 0 24 24"><path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.41,8.61 6.3,8.8 6.22,9C5.83,9 5.44,9 5,9.11V8M5,18V19.5H19V18C19,15.34 13.67,14 12,14C10.33,14 5,15.34 5,18Z" /></svg>
+                          </div>
+                          <h3 class="card-grid-title">For Tenants</h3>
+                          <p class="card-grid-description">Enjoy the flexibility of paying rent in instalments that suit your budget. Say goodbye to the stress of large upfront payments.</p>
+                      </div>
+
+                      <!-- Card for Landlords -->
+                      <div class="info-card" data-modal-target="landlords-modal">
+                          <div class="card-icon-wrapper">
+                              <!-- Landlord Icon (placeholder) -->
+                              <svg viewBox="0 0 24 24"><path d="M11,7L9.5,4.5L8,7H11M16,7L14.5,4.5L13,7H16M6,2L12,5L18,2L21,4V12.5C21,13.13 20.84,13.73 20.54,14.28L18,13L15,14L12,13L9,14L6,13L3,14V4L6,2M6,15L9,16L12,15L15,16L18,15L20.62,15.75C20.88,16.54 21,17.27 21,18C21,19.33 20.42,20.55 19.5,21.38L18,20L15,21L12,20L9,21L6,20L4.5,21.38C3.58,20.55 3,19.33 3,18C3,17.27 3.12,16.54 3.38,15.75L6,15Z" /></svg>
+                          </div>
+                          <h3 class="card-grid-title">For Landlords</h3>
+                          <p class="card-grid-description">Reduce late payments, securely collect rent, and efficiently manage your properties. Gain peace of mind with our reliable platform.</p>
+                      </div>
+                  </div>
+              </div>
+            </section>
+
+            <!-- Modal for Tenants -->
+            <div id="tenants-modal" class="modal-overlay">
+                <div class="modal-content">
+                    <button class="modal-close-btn">×</button>
+                    <div class="modal-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.41,8.61 6.3,8.8 6.22,9C5.83,9 5.44,9 5,9.11V8M5,18V19.5H19V18C19,15.34 13.67,14 12,14C10.33,14 5,15.34 5,18Z" /></svg>
+                    </div>
+                    <h2 class="modal-title">For Tenants</h2>
+                    <p class="modal-text">Enjoy the flexibility of paying rent in instalments that suit your budget. Say goodbye to the stress of large upfront payments and manage your finances better.</p>
+                    <a href="signup.html" class="btn btn-primary modal-btn">Get Started as a Tenant</a>
+                </div>
+            </div>
+            
+            <!-- Modal for Landlords -->
+            <div id="landlords-modal" class="modal-overlay">
+                <div class="modal-content">
+                    <button class="modal-close-btn">×</button>
+                    <div class="modal-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M11,7L9.5,4.5L8,7H11M16,7L14.5,4.5L13,7H16M6,2L12,5L18,2L21,4V12.5C21,13.13 20.84,13.73 20.54,14.28L18,13L15,14L12,13L9,14L6,13L3,14V4L6,2M6,15L9,16L12,15L15,16L18,15L20.62,15.75C20.88,16.54 21,17.27 21,18C21,19.33 20.42,20.55 19.5,21.38L18,20L15,21L12,20L9,21L6,20L4.5,21.38C3.58,20.55 3,19.33 3,18C3,17.27 3.12,16.54 3.38,15.75L6,15Z" /></svg>
+                    </div>
+                    <h2 class="modal-title">For Landlords</h2>
+                    <p class="modal-text">Reduce late payments, securely collect rent, and efficiently manage your properties. Gain peace of mind with our reliable and transparent platform.</p>
+                    <a href="signup.html" class="btn btn-primary modal-btn">Get Started as a Landlord</a>
+                </div>
+            </div>
+
+            <section class="benefits-section fade-in-section">
+              <div class="container">
+                  <div class="benefits-header">
+                      <h2 class="benefits-title">Financial Freedom for Tenants</h2>
+                  </div>
+                  <div class="benefits-grid">
+                      
+                      <!-- Benefit 1: Flexible Instalments -->
+                      <div class="benefit-card">
+                          <div class="benefit-icon-wrapper">
+                              <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z" /></svg>
+                          </div>
+                          <h3 class="benefit-card-title">Flexible Instalments</h3>
+                          <p class="benefit-card-description">Pay your rent daily, weekly, or monthly. Choose a plan that fits your cash flow.</p>
+                      </div>
+
+                      <!-- Benefit 2: Auto-Debit Savings -->
+                      <div class="benefit-card">
+                          <div class="benefit-icon-wrapper">
+                              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M640-520q17 0 28.5-11.5T680-560q0-17-11.5-28.5T640-600q-17 0-28.5 11.5T600-560q0 17 11.5 28.5T640-520Zm-320-80h200v-80H320v80ZM180-120q-34-114-67-227.5T80-580q0-92 64-156t156-64h200q29-38 70.5-59t89.5-21q25 0 42.5 17.5T720-820q0 6-1.5 12t-3.5 11q-4 11-7.5 22.5T702-751l91 91h87v279l-113 37-67 224H480v-80h-80v80H180Zm60-80h80v-80h240v80h80l62-206 98-33v-141h-40L620-720q0-20 2.5-38.5T630-796q-29 8-51 27.5T547-720H300q-58 0-99 41t-41 99q0 98 27 191.5T240-200Zm240-298Z"/></svg>
+                          </div>
+                          <h3 class="benefit-card-title">Auto-Debit Savings</h3>
+                          <p class="benefit-card-description">Set up automatic debits to save for your rent seamlessly throughout the year.</p>
+                      </div>
+
+                      <!-- Benefit 3: Share & Receive Credit -->
+                      <div class="benefit-card">
+                          <div class="benefit-icon-wrapper">
+                              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M0-240v-63q0-43 44-70t116-27q13 0 25 .5t23 2.5q-14 21-21 44t-7 48v65H0Zm240 0v-65q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-26-6.5-49T754-397q11-2 22.5-2.5t23.5-.5q72 0 116 26.5t44 70.5v63H780Zm-455-80h311q-10-20-55.5-35T480-370q-55 0-100.5 15T325-320ZM160-440q-33 0-56.5-23.5T80-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T160-440Zm640 0q-33 0-56.5-23.5T720-520q0-34 23.5-57t56.5-23q34 0 57 23t23 57q0 33-23 56.5T800-440Zm-320-40q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm0-80q17 0 28.5-11.5T520-600q0-17-11.5-28.5T480-640q-17 0-28.5 11.5T440-600q0 17 11.5 28.5T480-560Zm1 240Zm-1-280Z"/></svg>
+                          </div>
+                          <h3 class="benefit-card-title">Share & Receive Credit</h3>
+                          <p class="benefit-card-description">Easily share credit with friends and family, or receive assistance for your rent payments.</p>
+                      </div>
+
+                      <!-- Benefit 4: Instant Receipts -->
+                      <div class="benefit-card">
+                          <div class="benefit-icon-wrapper">
+                              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M240-80q-50 0-85-35t-35-85v-120h120v-560l60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60 60 60 60-60v680q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-560H320v440h360v120q0 17 11.5 28.5T720-160ZM360-600v-80h240v80H360Zm0 120v-80h240v80H360Zm320-120q-17 0-28.5-11.5T640-640q0-17 11.5-28.5T680-680q17 0 28.5 11.5T720-640q0 17-11.5 28.5T680-600Zm0 120q-17 0-28.5-11.5T640-520q0-17 11.5-28.5T680-560q17 0 28.5 11.5T720-520q0 17-11.5 28.5T680-480ZM240-160h360v-80H200v40q0 17 11.5 28.5T240-160Zm-40 0v-80 80Z"/></svg>
+                          </div>
+                          <h3 class="benefit-card-title">Instant Receipts</h3>
+                          <p class="benefit-card-description">Get automatic rent payment receipts via SMS, email, and in-app notifications.</p>
+                      </div>
+                      
+                      <!-- Benefit 5: Payment Reports -->
+                      <div class="benefit-card">
+                          <div class="benefit-icon-wrapper">
+                              <svg viewBox="0 0 24 24"><path d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19C3,20.1 3.9,21 5,21H19C20.1,21 21,20.1 21,19V5C21,3.89 20.1,3 19,3Z" /></svg>
+                          </div>
+                          <h3 class="benefit-card-title">Payment Reports</h3>
+                          <p class="benefit-card-description">Track your expenses with yearly payment reports sent directly to your email.</p>
+                      </div>
+                      
+                      <!-- Benefit 6: Maintenance Requests -->
+                      <div class="benefit-card">
+                          <div class="benefit-icon-wrapper">
+                              <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M754-81q-8 0-15-2.5T726-92L522-296q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l85-85q6-6 13-8.5t15-2.5q8 0 15 2.5t13 8.5l204 204q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13l-85 85q-6 6-13 8.5T754-81Zm0-95 29-29-147-147-29 29 147 147ZM205-80q-8 0-15.5-3T176-92l-84-84q-6-6-9-13.5T80-205q0-8 3-15t9-13l212-212h85l34-34-165-165h-57L80-765l113-113 121 121v57l165 165 116-116-43-43 56-56H495l-28-28 142-142 28 28v113l56-56 142 142q17 17 26 38.5t9 45.5q0 24-9 46t-26 39l-85-85-56 56-42-42-207 207v84L233-92q-6 6-13 9t-15 3Zm0-96 170-170v-29h-29L176-205l29 29Zm0 0-29-29 15 14 14 15Zm549 0 29-29-29 29Z"/></svg>
+                          </div>
+                          <h3 class="benefit-card-title">Maintenance Requests</h3>
+                          <p class="benefit-card-description">Easily notify your landlord about any repairs or maintenance needed for your property.</p>
+                      </div>
+                  </div>
+              </div>
+            </section>
+
+            <section class="benefits-section fade-in-section">
+                <div class="container">
+                    <div class="benefits-header">
+                        <h2 class="benefits-title">Secure & Streamlined Rent Management</h2>
+                    </div>
+                <div class="benefits-grid">
+                
+                <!-- Feature 1: Secure Escrow Account -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <svg viewBox="0 0 24 24"><path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z" /></svg>
+                    </div>
+                    <h3 class="benefit-card-title">Secure Escrow Account</h3>
+                    <p class="benefit-card-description">Tenant payments are held securely in a locked account until remittance.</p>
+                </div>
+
+                <!-- Feature 2: Real-Time Dashboard -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M295-119q-36-1-68.5-18.5T165-189q-40-48-62.5-114.5T80-440q0-83 31.5-156T197-723q54-54 127-85.5T480-840q83 0 156 32t127 87q54 55 85.5 129T880-433q0 77-25 144t-71 113q-28 28-59 42.5T662-119q-18 0-36-4.5T590-137l-56-28q-12-6-25.5-9t-28.5-3q-15 0-28.5 3t-25.5 9l-56 28q-19 10-37.5 14.5T295-119Zm2-80q9 0 18.5-2t18.5-7l56-28q21-11 43.5-16t45.5-5q23 0 46 5t44 16l57 28q9 5 18 7t18 2q19 0 36-10t34-30q32-38 50-91t18-109q0-134-93-227.5T480-760q-134 0-227 94t-93 228q0 57 18.5 111t51.5 91q17 20 33 28.5t34 8.5Zm183-281Zm0 120q33 0 56.5-23.5T560-440q0-8-1.5-16t-4.5-16l50-67q10 13 17.5 27.5T634-480h82q-15-88-81.5-144T480-680q-88 0-155 56.5T244-480h82q14-54 57-87t97-33q17 0 32 3t29 9l-51 69q-2 0-5-.5t-5-.5q-33 0-56.5 23.5T400-440q0 33 23.5 56.5T480-360Z"/></svg>
+                    </div>
+                    <h3 class="benefit-card-title">Real-Time Dashboard</h3>
+                    <p class="benefit-card-description">Monitor all your properties, tenancy status, and payment progress in one place.</p>
+                </div>
+
+                <!-- Feature 3: Automated Notifications -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M160-200v-80h80v-280q0-83 50-147.5T420-792v-28q0-25 17.5-42.5T480-880q25 0 42.5 17.5T540-820v28q80 20 130 84.5T720-560v280h80v80H160Zm320-300Zm0 420q-33 0-56.5-23.5T400-160h160q0 33-23.5 56.5T480-80ZM320-280h320v-280q0-66-47-113t-113-47q-66 0-113 47t-47 113v280Z"/></svg>
+                    </div>
+                    <h3 class="benefit-card-title">Automated Notifications</h3>
+                    <p class="benefit-card-description">Receive alerts for repair requests, and send reminders for tenancy expiration.</p>
+                </div>
+
+                <!-- Feature 4: Flexible Remittances -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M440-200h80v-40h40q17 0 28.5-11.5T600-280v-120q0-17-11.5-28.5T560-440H440v-40h160v-80h-80v-40h-80v40h-40q-17 0-28.5 11.5T360-520v120q0 17 11.5 28.5T400-360h120v40H360v80h80v40ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-560v-160H240v640h480v-480H520ZM240-800v160-160 640-640Z"/></svg>
+                    </div>
+                    <h3 class="benefit-card-title">Flexible Remittances</h3>
+                    <p class="benefit-card-description">Choose daily, weekly, monthly, quarterly, or yearly fund remittances.</p>
+                </div>
+                
+                <!-- Feature 5: Assign Property Managers -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M96 128a128 128 0 1 0 256 0A128 128 0 1 0 96 128zm94.5 200.2l18.6 31L175.8 483.1l-36-146.9c-2-8.1-9.8-13.4-17.9-11.3C51.9 342.4 0 405.8 0 481.3c0 17 13.8 30.7 30.7 30.7l131.7 0c0 0 0 0 .1 0l5.5 0 112 0 5.5 0c0 0 0 0 .1 0l131.7 0c17 0 30.7-13.8 30.7-30.7c0-75.5-51.9-138.9-121.9-156.4c-8.1-2-15.9 3.3-17.9 11.3l-36 146.9L238.9 359.2l18.6-31c6.4-10.7-1.3-24.2-13.7-24.2L224 304l-19.7 0c-12.4 0-20.1 13.6-13.7 24.2z"/></svg>
+                    </div>
+                    <h3 class="benefit-card-title">Assign Property Managers</h3>
+                    <p class="benefit-card-description">Create sub-accounts for managers with customizable access privileges.</p>
+                </div>
+                
+                <!-- Feature 6: Multi-Property Management -->
+                <div class="benefit-card">
+                    <div class="benefit-icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-120v-560h240v-80l120-120 120 120v240h240v400H120Zm80-80h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm240 320h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm0-160h80v-80h-80v80Zm240 480h80v-80h-80v80Zm0-160h80v-80h-80v80Z"/></svg>
+                    </div>
+                    <h3 class="benefit-card-title">Multi-Property Management</h3>
+                    <p class="benefit-card-description">Ideal for individual landlords and property management companies to manage portfolios.</p>
+                </div>
+            </div>
+            </div>
+            </section>
+            
+            <!--<section class="reviews-section fade-in-section">
+                <div class="container">
+                    <div class="reviews-grid">
+                        <div class="review-item">
+                            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star star-empty">★</span></div>
+                            <p class="review-source">Capterra</p>
+                        </div>
+                        <div class="review-item">
+                            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+                            <p class="review-source">G2 Crowd</p>
+                        </div>
+                        <div class="review-item">
+                            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star star-empty">★</span></div>
+                            <p class="review-source">SoftwareAdvice</p>
+                        </div>
+                        <div class="review-item">
+                            <div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star star-empty">★</span></div>
+                            <p class="review-source">Trustpilot</p>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+
+            <section class="feature-section fade-in-section">
+                <div class="container feature-container">
+                    <div class="feature-image-column">
+                        <div class="feature-image-composition">
+                            <div class="feature-blob organic-blob-1"></div>
+                            <img src="https://i.imgur.com/8Qp4w0m.png" alt="Accounting dashboard" class="feature-image-main transform-1">
+                            <img src="https://i.imgur.com/nJg3Fj0.png" alt="Income chart" class="feature-image-floating transform-2">
+                        </div>
+                    </div>
+                    <div class="feature-text-column text-order-first">
+                        <p class="feature-eyebrow">Accounting</p>
+                        <h2 class="feature-title">Manage accounting details with ease</h2>
+                        <p class="feature-description">Set up invoices, send receipts, and create financial reports so you can track every last penny.</p>
+                        <ul class="feature-list">
+                            <li>Automate invoices, late fees, and more</li>
+                            <li>Customizable and pre-templated reports</li>
+                            <li>Connect bank accounts and sync with QuickBooks</li>
+                        </ul>
+                        <a href="#" class="feature-more-link">More ></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feature-section layout-reversed">
+                <div class="container feature-container">
+                    <div class="feature-image-column">
+                        <div class="feature-image-composition">
+                            <div class="feature-blob organic-blob-2"></div>
+                            <img src="https://i.imgur.com/G5g2mJc.png" alt="Tenant screening report" class="feature-image-main transform-2">
+                            <img src="https://i.imgur.com/2s4Lh1V.png" alt="Tenant screening card" class="feature-image-floating transform-1">
+                        </div>
+                    </div>
+                    <div class="feature-text-column">
+                        <p class="feature-eyebrow">Leasing</p>
+                        <h2 class="feature-title">Screen and onboard tenants with just a few clicks</h2>
+                        <p class="feature-description">Collect applications, run background checks, and sign lease agreements in time for moving day.</p>
+                        <ul class="feature-list">
+                            <li>Run background and credit checks together or separately</li>
+                            <li>Designate screening fees</li>
+                            <li>Option to include screenings with every application</li>
+                        </ul>
+                        <a href="#" class="feature-more-link">More ></a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="feature-section fade-in-section">
+                <div class="container feature-container">
+                    <div class="feature-image-column">
+                        <div class="feature-image-composition">
+                            <div class="feature-blob organic-blob-3"></div>
+                            <img src="https://i.imgur.com/L4Zl0pL.png" alt="Maintenance request portal" class="feature-image-main transform-1">
+                            <img src="https://i.imgur.com/39w0bI1.png" alt="Maintenance report chart" class="feature-image-floating transform-2 centered">
+                        </div>
+                    </div>
+                    <div class="feature-text-column text-order-first">
+                        <p class="feature-eyebrow">Maintenance</p>
+                        <h2 class="feature-title">Quickly handle maintenance requests & vendors</h2>
+                        <p class="feature-description">Stay on top of all your maintenance needs with our simple, online portal.</p>
+                        <ul class="feature-list">
+                            <li>Receive maintenance requests online</li>
+                            <li>Keep track of progress</li>
+                            <li>Get professional bids with our built-in network</li>
+                        </ul>
+                        <a href="#" class="feature-more-link">More ></a>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="feature-section layout-reversed">
+                <div class="container feature-container">
+                    <div class="feature-image-column">
+                        <div class="feature-image-composition">
+                            <div class="feature-blob organic-blob-4"></div>
+                            <img src="https://i.imgur.com/KqW42pD.png" alt="Rental application dashboard" class="feature-image-main transform-2">
+                            <img src="https://i.imgur.com/J8n6x3Z.png" alt="Application status card" class="feature-image-floating transform-1 centered">
+                        </div>
+                    </div>
+                    <div class="feature-text-column">
+                        <p class="feature-eyebrow">Marketing</p>
+                        <h2 class="feature-title">Syndicate your property listings and get a free custom website</h2>
+                        <p class="feature-description">Get more eyes on your properties with easy syndication and a personal listing site.</p>
+                        <ul class="feature-list">
+                            <li>Post to Rentler.com, Apartments.com, Realtor.com, and more</li>
+                            <li>Customize your own listing website</li>
+                            <li>Receive rental applications online</li>
+                        </ul>
+                        <a href="#" class="feature-more-link">More ></a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="icon-grid-section fade-in-section">
+                <div class="container">
+                    <div class="icon-grid">
+                        <div class="icon-item">
+                            <div class="icon-wrapper"><img src="https://i.imgur.com/B9B1ZgU.png" alt="Mobile Apps Icon"></div>
+                            <h3 class="icon-title">Mobile Apps</h3>
+                            <p class="icon-description">Native phone apps for managers and tenants</p>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-wrapper"><img src="https://i.imgur.com/x0q2H4I.png" alt="Support Icon"></div>
+                            <h3 class="icon-title">World-Class Support</h3>
+                            <p class="icon-description">Call or message our team when you need us</p>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-wrapper"><img src="https://i.imgur.com/1hQnUfV.png" alt="Owner Portal Icon"></div>
+                            <h3 class="icon-title">Owner Portal</h3>
+                            <p class="icon-description">Give your property owners true transparency</p>
+                        </div>
+                        <div class="icon-item">
+                            <div class="icon-wrapper"><img src="https://i.imgur.com/fM9R8y9.png" alt="Team Management Icon"></div>
+                            <h3 class="icon-title">Team Management</h3>
+                            <p class="icon-description">Add members, assign roles, dictate responsibilities</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="testimonials-section fade-in-section">
+                <div class="container">
+                    <h2 class="section-title">Creating satisfied customers for nearly a decade</h2>
+                    <div class="testimonial-slider">
+                        <!-- Left Arrow Button -->
+                        <button class="slider-arrow prev" id="testimonial-prev" aria-label="Previous testimonial">←</button>
+                        
+                        <!-- Slider Viewport -->
+                        <div class="testimonial-viewport">
+                            <!-- This track will move left and right -->
+                            <div class="testimonial-track" id="testimonial-track">
+                                
+                                <!-- Card 1: Jeremy D. -->
+                                <div class="testimonial-card">
+                                    <div class="card-header"><div class="avatar-placeholder"></div><span class="author-name">Jeremy D.</span></div>
+                                    <div class="stars">★★★★★</div>
+                                    <h3 class="testimonial-headline">Comprehensive for our needs</h3>
+                                    <p class="testimonial-text">It's my first and only property management tool. I was sold on the price and features. It <span class="highlight">meets all of my needs</span>. My tenants also seem to have no issues with it.</p>
+                                    <div class="card-footer"><img src="https://i.imgur.com/G408V3C.png" alt="Capterra Logo"></div>
+                                </div>
+
+                                <!-- Card 2: Salah -->
+                                <div class="testimonial-card">
+                                    <div class="card-header"><div class="avatar-placeholder"></div><span class="author-name">Salah</span></div>
+                                    <div class="stars">★★★★★</div>
+                                    <h3 class="testimonial-headline">Best cloud website</h3>
+                                    <p class="testimonial-text">I have been using TenantCloud for more than a year now, and they have updated the site to be one of the <span class="highlight">best and easy online websites</span> for real estate work.</p>
+                                    <div class="card-footer"><img src="https://i.imgur.com/gO0MhHq.png" alt="Software Advice Logo"></div>
+                                </div>
+
+                                <!-- Card 3: Derek P. -->
+                                <div class="testimonial-card">
+                                    <div class="card-header"><img class="avatar" src="https://i.imgur.com/k9b5o0g.jpeg" alt="Avatar of Derek P."><span class="author-name">Derek P.</span></div>
+                                    <div class="stars">★★★★★</div>
+                                    <h3 class="testimonial-headline">Great all in one tool</h3>
+                                    <p class="testimonial-text">Multiple features are interlinked to keep all your information in sync and simple to locate. I received <span class="highlight">prompt, helpful responses</span> from their friendly support staff.</p>
+                                    <div class="card-footer"><img src="https://i.imgur.com/w4pA00F.png" alt="G2 Crowd Logo"></div>
+                                </div>
+
+                                <!-- Card 4: Maria S. -->
+                                <div class="testimonial-card">
+                                    <div class="card-header"><div class="avatar-placeholder"></div><span class="author-name">Maria S.</span></div>
+                                    <div class="stars">★★★★★</div>
+                                    <h3 class="testimonial-headline">A Real Time-Saver!</h3>
+                                    <p class="testimonial-text">The ability to automate rent reminders and collect payments online has <span class="highlight">saved me countless hours</span>. The interface is intuitive and easy for both me and my tenants to use.</p>
+                                    <div class="card-footer"><img src="https://i.imgur.com/G408V3C.png" alt="Capterra Logo"></div>
+                                </div>
+                                
+                                <!-- Card 5: David L. -->
+                                <div class="testimonial-card">
+                                    <div class="card-header"><div class="avatar-placeholder"></div><span class="author-name">David L.</span></div>
+                                    <div class="stars">★★★★★</div>
+                                    <h3 class="testimonial-headline">Excellent Support</h3>
+                                    <p class="testimonial-text">Whenever I had a question, the support team was quick to respond and incredibly helpful. It's refreshing to see a company that <span class="highlight">truly values its customers</span>.</p>
+                                    <div class="card-footer"><img src="https://i.imgur.com/w4pA00F.png" alt="G2 Crowd Logo"></div>
+                                </div>
+                                
+                                <!-- Card 6: Chloe T. -->
+                                <div class="testimonial-card">
+                                    <div class="card-header"><img class="avatar" src="https://i.imgur.com/johY2aP.jpeg" alt="Avatar of Chloe T."><span class="author-name">Chloe T.</span></div>
+                                    <div class="stars">★★★★★</div>
+                                    <h3 class="testimonial-headline">Transformed My Workflow</h3>
+                                    <p class="testimonial-text">From tenant screening to maintenance requests, everything is in one place. This software has completely <span class="highlight">transformed my property management workflow</span>.</p>
+                                    <div class="card-footer"><img src="https://i.imgur.com/gO0MhHq.png" alt="Software Advice Logo"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Right Arrow Button -->
+                        <button class="slider-arrow next" id="testimonial-next" aria-label="Next testimonial">→</button>
+                    </div>
+                    <div class="read-more-wrapper">
+                        <a href="#" class="btn btn-outline">Read more</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="solutions-section fade-in-section">
+                <div class="container">
+                    <h2 class="section-title">A solution that scales with your needs</h2>
+                    <div class="solutions-grid">
+                        
+                        <!-- Card 1: Landlords -->
+                        <div class="solution-card">
+                            <div class="card-image-wrapper">
+                                <img src="https://i.imgur.com/gTqP9Vp.png" alt="A professional landlord" loading="lazy">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Landlords</h3>
+                                <p class="card-description">
+                                    Are you an independent landlord managing your own properties? Make juggling your daily tasks easier and more organized.
+                                </p>
+                                <a href="#" class="card-link">More ></a>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Property Managers -->
+                        <div class="solution-card">
+                            <div class="card-image-wrapper">
+                                <img src="https://i.imgur.com/C7fCPhE.png" alt="A professional property manager">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Property Managers</h3>
+                                <p class="card-description">
+                                    Larger portfolios mean more tenants, more maintenance, and more marketing. Our business tools give you ways to navigate your growing needs easily.
+                                </p>
+                                <a href="#" class="card-link">More ></a>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Tenants -->
+                        <div class="solution-card">
+                            <div class="card-image-wrapper">
+                                <img src="https://i.imgur.com/uPAdx6T.png" alt="A tenant with her child">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Tenants</h3>
+                                <p class="card-description">
+                                    Give tenants their own space with a separate portal built just for them. Tenants can collect rent online, manage maintenance requests, and more.
+                                </p>
+                                <a href="#" class="card-link">More ></a>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Service Pros -->
+                        <div class="solution-card">
+                            <div class="card-image-wrapper">
+                                <img src="https://i.imgur.com/tHqgX5V.png" alt="A service professional with a clipboard">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">Service Pros</h3>
+                                <p class="card-description">
+                                    Got a service professional you love working with? Invite them to sign up and assign requests and send payments inside Rent Capital.
+                                </p>
+                                <a href="#" class="card-link">More ></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section fade-in-section">
+                <div class="container faq-container">
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                    <div class="accordion-container">
+                        
+                        <!-- FAQ Item 1 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-question">What is rental property management software?</span>
+                                <span class="accordion-icon">
+                                    <span class="plus-icon">+</span>
+                                    <span class="minus-icon">–</span>
+                                </span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    <!-- PASTE THE NEW CONTENT HERE -->
+                                    <p>Property management software allows landlords and property managers to monitor, screen, and provide <a href="#" class="link-underline">online rent collection</a> to their renters. The rental industry is always looking for ways to optimize, simplify, and enhance back-office operations and finances; property management software is the way to do it. Using property management software improves communication between managers, owners, and renters.</p>
+                                    <p>Rent Capital, a <a href="#" class="link-underline">cloud-based SaaS</a>, automates daily property management tasks while saving time and money by eliminating unnecessary add-ons.</p>
+                                    <p>The best rental property software integrates all the main features of property administration into a single program, including accounting, maintenance, communication, online rent collection, <a href="#" class="link-underline">tenant screening</a>, and reporting.</p>
+                                    <p>It is much easier to manage and store your documents with the help of all-in-one software. You can finally archive the disorganized Google Sheets and Microsoft Excel.</p>
+                                    <p>Rent Capital enables landlords to breathe easy by promoting lists on a marketing website, increasing rent roll, offering tenants better service, and scaling up the business.</p>
+                                    <p>Our online property management software lets you instantly connect and synchronize with your QuickBooks Online account to save time and be more productive. You can synchronize your calendar with Google Calendar to easily keep track of reminders, notes, and important events regarding your business — without switching between calendars.</p>
+                                    <p>Rental management software enables businesses to provide the best services and expand on a larger scale. If you are a property owner or a landlord who understands all the features and benefits of using online property management software and is looking for the best one, try Rent Capital!</p>
+                                    <p>Capterra ranks Rent Capital as one of the best real estate property management software available today.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 2 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-question">Why do you need property management software?</span>
+                                <span class="accordion-icon">
+                                    <span class="plus-icon">+</span>
+                                    <span class="minus-icon">–</span>
+                                </span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    <p>Rent Capital simplifies administrative, marketing, and other business operations for property managers who oversee multiple rental properties. Rent Capital allows users to post property listings, sign lease agreements online with the help of <a href="#" class="link-underline">electronic signatures</a>, advertise rentals, receive rent payments via credit card, debit card, or <a href="#" class="link-underline">ACH</a>, and receive and resolve maintenance requests from tenants, among many other features.</p>
+                                    <p>Using our property management software, managers and owners can speed up the leasing process to keep more of their properties occupied with quality tenants. Rent Capital is a dynamic platform that equips property managers with everything they need to launch, operate, communicate with tenants, and expand.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Item 3 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-question">Who can use rental property management software?</span>
+                                <span class="accordion-icon">
+                                    <span class="plus-icon">+</span>
+                                    <span class="minus-icon">–</span>
+                                </span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                  <p>While property owners and managers efficiently manage their rental properties and keep tabs on accounting transactions, their tenants can apply for apartments and pay their rent online, thanks to real estate management software. Service professionals can also benefit from our online maintenance request system and detailed work orders.</p>
+                                  <p><strong>Landlords and Property managers:</strong> With property management software, landlords and property managers can collect rent online, store all their rental information on our cloud-based software, upload photos, manage maintenance requests, use automatic accounting features, accept online rental applications, sign lease agreements with e-signatures, check on financial reports, communicate with tenants, team and service professionals, advertise rental vacancies across multiple rental websites, and much more. Rental property management software will improve the efficiency of landlords managing anything from single-family houses to multi-family rentals or even <a href="#" class="link-underline">Homeowner Association</a> to manage their properties and communities.</p>
+                                  <p><strong>Tenants:</strong> Besides searching for a rental property, tenants may pay their rent online, request maintenance, apply for rentals, sign lease agreements online, report their rent payments to credit bureaus and improve their credit score, contact their landlord, and view their rental history.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 4 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-question">What features should you look for in rental property management software?</span>
+                                <span class="accordion-icon">
+                                    <span class="plus-icon">+</span>
+                                    <span class="minus-icon">–</span>
+                                </span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    <ol class="faq-ordered-list">
+                                        <li><strong>Income Tracking and Reporting:</strong> As of August 24, 2022, the average <a href="#" class="link-underline">landlord income</a> is $69,065. Your property management app should simplify rent payment management and provide comprehensive income-tracking features.</li>
+                                        <li><strong>Time Efficiency:</strong> According to recent data, 76% of landlords spend 40 hours each month monitoring their properties. Therefore, time-saving features are essential.</li>
+                                        <li><strong>Tenant Screening:</strong> Tenant screening is essential since <a href="#" class="link-underline">42.9 million</a> or 34.5% of U.S. households rent their homes.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 5 -->
+                        <div class="accordion-item">
+                            <button class="accordion-header">
+                                <span class="accordion-question">What problems does property management software solve?</span>
+                                <span class="accordion-icon">
+                                    <span class="plus-icon">+</span>
+                                    <span class="minus-icon">–</span>
+                                </span>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="accordion-content-inner">
+                                    <p>Property management software solves many problems, making a property manager's daily routines more manageable and streamlined. Here are just a few issues that property management software solves:</p>
+                                    <ul class="faq-bullet-list">
+                                        <li><strong>Automate Rental Invoicing and Collections</strong><br>Property management software allows landlords to get paid quickly and easily with the help of online rental payment tools.</li>
+                                        <li><strong>Improve & Streamline Tenant Screening</strong><br>With the help of a tenant screening report powered by TransUnion, landlords can determine whether a candidate is a good fit for their property.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+        </main>
+    </div>
+
+    <div id="search-overlay" class="search-overlay">
+      <button id="search-close-btn" class="search-close-btn" aria-label="Close Search">×</button>
+      <div class="search-overlay-content">
+          <form action="#" class="search-form" role="search">
+              <input type="search" id="search-input" class="search-input" placeholder="Type to search..." autocomplete="off">
+          </form>
+      </div>
+    </div>
+
+    <!-- Modal for Process Section - Tenants -->
+    <div id="process-tenants-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">×</button>
+            <div class="modal-icon-wrapper">
+                <svg viewBox="0 0 24 24"><path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.41,8.61 6.3,8.8 6.22,9C5.83,9 5.44,9 5,9.11V8M5,18V19.5H19V18C19,15.34 13.67,14 12,14C10.33,14 5,15.34 5,18Z" /></svg>
+            </div>
+            <h2 class="modal-title">For Tenants</h2>
+            <p class="modal-text">Enjoy the flexibility of paying rent in instalments that suit your budget. Say goodbye to the stress of large upfront payments and manage your finances better.</p>
+            <a href="signup.html" class="btn btn-primary modal-btn">Get Started</a>
+        </div>
+    </div>
+    
+    <!-- Modal for Process Section - Landlords -->
+    <div id="process-landlords-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn">×</button>
+            <div class="modal-icon-wrapper">
+                <svg viewBox="0 0 24 24"><path d="M11,7L9.5,4.5L8,7H11M16,7L14.5,4.5L13,7H16M6,2L12,5L18,2L21,4V12.5C21,13.13 20.84,13.73 20.54,14.28L18,13L15,14L12,13L9,14L6,13L3,14V4L6,2M6,15L9,16L12,15L15,16L18,15L20.62,15.75C20.88,16.54 21,17.27 21,18C21,19.33 20.42,20.55 19.5,21.38L18,20L15,21L12,20L9,21L6,20L4.5,21.38C3.58,20.55 3,19.33 3,18C3,17.27 3.12,16.54 3.38,15.75L6,15Z" /></svg>
+            </div>
+            <h2 class="modal-title">For Landlords</h2>
+            <p class="modal-text">Reduce late payments, securely collect rent, and efficiently manage your properties. Gain peace of mind with our reliable and transparent platform.</p>
+            <a href="signup.html" class="btn btn-primary modal-btn">Get Started</a>
+        </div>
+    </div>
+
+    <footer class="site-footer-wrapper">
+        <div class="marquee">
+            <div class="marquee-content">
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+            </div>
+            <!-- Duplicate the content for a seamless loop -->
+            <div class="marquee-content" aria-hidden="true">
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+                <p>Serving property managers for more than a <b>decade</b> • </p>
+            </div>
+        </div>
+
+        <div class="pre-footer-cta">
+            <div class="container">
+                <h2 class="pre-footer-title">Ready to Simplify Your Rental Experience?</h2>
+                <a href="signup.html" class="btn btn-light-outline">Get Started</a>
+            </div>
+        </div>
+        
+        <div class="main-footer">
+            <div class="container footer-container">
+                <div class="footer-top">
+                    <div class="footer-logo-column">
+                        <!-- Reusing the logo from the header for consistency -->
+                        <a href="#" class="logo">
+                            <svg class="logo-icon" viewBox="0 0 151 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M25.438 16.875c0 1.172-.336 2.266-1.008 3.25- .672 .985-1.625 1.75-2.695 2.219 1.07.47 1.984 1.156 2.71 2.031.728.875 1.095 1.844 1.095 2.875 0 .844-.218 1.657-.656 2.407-.438.75-1.063 1.344-1.844 1.75-.781.406-1.656.609-2.594.609- .937 0-1.78-.203-2.53-.609-.75-.406-1.344-.992-1.782-1.742-.437-.75-.656-1.562-.656-2.406 0-1.031.312-1.992 1.008-2.867.695-.875 1.515-1.562 2.46-2.031-.875-.5-1.657-1.242-2.313-2.227-.656-.984-.984-2.078-.984-3.25 0-1.203.352-2.312 1.055-3.312.703-1.008 1.625-1.766 2.719-2.258.906-.344 1.812-.531 2.75-.531.968 0 1.875.187 2.75.531 1.094.492 2.016 1.25 2.719 2.258.703 1 .055 2.11.055 3.312Zm-5.594 10.875c0 .5.133 1 .375 1.407.242.406.625.687 1.125.843.5.157 1.031.25 1.625.25.563 0 1.094-.094 1.594-.25.5-.156.875-.437 1.125-.843.25-.407.375-.907.375-1.407 0-.531-.133-1.008-.375-1.437-.242-.43- .625-.758-1.125-.969-.5-.219-1.03-.313-1.593-.313-.594 0-1.125.094-1.625.313-.5.211-.883.54-1.125.97-.242.429-.375.906-.375 1.437Zm.063-10.75c0 .563.14.969.437 1.313.297.344.75.562 1.281.656.531.094 1.125.156 1.75.156.625 0 1.22-.062 1.75-.156.531-.094.969-.313 1.28-.656.313-.344.47-.75.47-1.313 0-.562-.157-1.047-.47-1.437-.312-.39- .75-.68-1.28-.844-.53-.164-1.125-.25-1.75-.25-.625 0-1.219.086-1.75.25-.531.164-.984.453-1.28.844-.298.39-.438.875-.438 1.437ZM38.305 26.312V12.875h2.938v16.125h-3.407l-9-10.844v10.844h-2.937V12.875h3.406l9 10.844v-7.406Z M52.212 12.875h3.125v16.25h-3.125v-16.25Zm.031 20c.406.375.875.562 1.406.562.531 0 1-.187 1.406-.562.406-.375.625-.844.625-1.406 0-.563-.219-1.031-.625-1.406-.406-.375-.875-.563-1.406-.563-.531 0-1 .188-1.406.563-.406.375-.625.843-.625 1.406 0 .562.219 1.031.625 1.406ZM67.337 29.125V12.875h3.125v16.25h-3.125Z M81.556 26.312V12.875h2.937v16.125h-3.406l-9-10.844v10.844h-2.938V12.875h3.407l9 10.844v-7.406Z M92.587 29.125V12.875h10.375v2.5h-7.25v4.5h6.625v2.5h-6.625v4.25h7.563v2.5h-10.688Z M115.15 29.125v-13h-4.125v-2.5h11.375v2.5h-4.125v13h-3.125Z M125.775 29.125V12.875h3.125v16.25h-3.125Z M139.712 19.312v9.813h-3.125V12.875h5.063c1.687 0 3.054.43 4.093 1.28.985.805 1.469 1.961 1.469 3.407 0 1.094-.32 2.062-.937 2.875-.618.812-1.485 1.383-2.594 1.687l3.75 7h-3.5l-3.219-6.812Zm0-3.937h2.125c.875 0 1.57-.218 2.063-.656.492-.437.75-.992.75-1.656 0-.688-.258-1.25-.75-1.688-.493-.437-1.188-.656-2.063-.656h-2.125v4.656Z" fill="#333"/><path d="M20 38.5c10.23 0 18.5-8.27 18.5-18.5S30.23 1.5 20 1.5 1.5 9.77 1.5 20 9.77 38.5 20 38.5Z" stroke="#4CAF50" stroke-width="3"/></svg>
+                            <span class="logo-text">Rent Capital</span>
+                        </a>
+                    </div>
+                    <!--<div class="footer-links-grid">
+                        <div class="footer-column">
+                            <h4 class="footer-heading">Features</h4>
+                            <ul class="footer-links">
+                                <li><a href="#">Online Payments</a></li>
+                                <li><a href="#">Tenant Screening</a></li>
+                                <li><a href="#">Listing Website</a></li>
+                                <li><a href="#">Premium Leads</a></li>
+                                <li><a href="#">Automatic Listing Syndication</a></li>
+                                <li><a href="#">Lead Tracking</a></li>
+                                <li><a href="#">Rental Applications</a></li>
+                                <li><a href="#">Online Leases</a></li>
+                                <li><a href="#">Roommates</a></li>
+                                <li><a href="#">Accounting</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-heading">Company</h4>
+                            <ul class="footer-links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Why Rent Capital</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Affiliate Program</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Do Not Sell or Share</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-heading">Use Cases</h4>
+                            <ul class="footer-links">
+                                <li><a href="#">Landlord</a></li>
+                                <li><a href="#">Property Manager</a></li>
+                                <li><a href="#">Tenant</a></li>
+                                <li><a href="#">Service Pro</a></li>
+                            </ul>
+                            <h4 class="footer-heading secondary">Give us a call</h4>
+                            <ul class="footer-links">
+                                <li><span>Phone Support</span></li>
+                                <li><a href="tel:+34-643-73-16-56">34-643-73-16-56</a></li>
+                                <li><span>9 AM to 5 PM CST</span></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-heading">Resources</h4>
+                            <ul class="footer-links">
+                                <li><a href="#">Landlord Resources</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">Fair Housing Act</a></li>
+                                <li><a href="#">Product Updates</a></li>
+                                <li><a href="#">Landlord Forms</a></li>
+                            </ul>
+                        </div>
+                    </div>-->
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">© 2025, Rent Capital LLC. All rights reserved.</p>
+                    <div class="app-stores">
+                        <a href="#"><img src="https://i.imgur.com/3Zk5Y4n.png" alt="Get it on App Store"></a>
+                        <a href="#"><img src="https://i.imgur.com/uTqf2aH.png" alt="Get it on Google Play"></a>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"></path></svg></a>
+                        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.81C10.44 7.31 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"></path></svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 13 11.11V10.2H10.5V18.5H13V13.74C13 12.22 13.25 11.25 14.5 11.25C15.75 11.25 16 12.09 16 13.74V18.5H18.5M6.5 18.5H9V10.2H6.5V18.5M7.75 8.9A1.25 1.25 0 0 0 9 7.65A1.25 1.25 0 0 0 7.75 6.4A1.25 1.25 0 0 0 6.5 7.65A1.25 1.25 0 0 0 7.75 8.9Z"></path></svg></a>
+                        <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"></path></svg></a>
+                        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.73,18.78 17.93,18.84C17.13,18.91 16.44,18.94 15.84,18.94L15,19C12.81,19 11.2,18.84 10.17,18.56C9.27,18.31 8.69,17.73 8.44,16.83C8.31,16.36 8.22,15.73 8.16,14.93C8.09,14.13 8.06,13.44 8.06,12.84L8,12C8,9.81 8.16,8.2 8.44,7.17C8.69,6.27 9.27,5.69 10.17,5.44C10.64,5.31 11.27,5.22 12.07,5.16C12.87,5.09 13.56,5.06 14.16,5.06L15,5C17.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"></path></svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="code.js" defer></script>
+</body>
+</html>
