@@ -1,0 +1,137 @@
+/* Import variables and global styles to maintain consistency */
+@import url('code.css');
+
+/* =================================== */
+/* 1. Landlord-Specific Hero Section   */
+/* =================================== */
+.landlord-hero {
+    background-color: white; /* Clean white background */
+}
+
+/* Re-using hero-actions from main homepage CSS */
+.hero-actions {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+/* =================================== */
+/* 2. "How It Works" Section           */
+/* (This section reuses styles from tenants.css, so we copy them here) */
+/* =================================== */
+.how-it-works-section {
+    padding: 5rem 0;
+    background-color: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-dark-blue);
+    margin-bottom: 3.5rem;
+}
+
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.step-card {
+    position: relative;
+    text-align: center;
+    background-color: #f9fafb;
+    padding: 2.5rem 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border-gray);
+    overflow: hidden;
+}
+
+.step-number {
+    position: absolute;
+    top: -1.5rem;
+    left: 1rem;
+    font-size: 6rem;
+    font-weight: 800;
+    color: var(--color-light-green-bg);
+    z-index: 1;
+    line-height: 1;
+}
+
+.step-title {
+    position: relative;
+    z-index: 2;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark-blue);
+    margin-bottom: 0.75rem;
+}
+
+.step-description {
+    position: relative;
+    z-index: 2;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+
+/* =================================== */
+/* 3. Final CTA Banner Section         */
+/* (This section also reuses styles from tenants.css) */
+/* =================================== */
+.cta-banner-section {
+    background-color: var(--color-dark-blue);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.cta-banner-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.cta-banner-btn {
+    margin-top: 2rem;
+    background-color: white;
+    color: var(--color-dark-blue);
+    font-size: 1.125rem;
+    padding: 0.75rem 2.5rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.cta-banner-btn:hover {
+    background-color: var(--color-primary-green);
+    color: white;
+}
+
+
+/* =================================== */
+/* 4. Responsive Adjustments           */
+/* =================================== */
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 2.75rem;
+    }
+    
+    .how-it-works-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .step-card {
+        text-align: left;
+    }
+
+    .step-number {
+        left: auto;
+        right: 1rem;
+    }
+    
+    .cta-banner-title {
+        font-size: 2.5rem;
+    }
+}

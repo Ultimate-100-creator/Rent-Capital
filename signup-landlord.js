@@ -39,9 +39,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const finishBtn = document.getElementById('btn-finish');
     const passwordToggles = document.querySelectorAll('.password-toggle');
 
-    // NEW: Modal Elements
+    // Modal Elements
     const successModal = document.getElementById('success-modal');
     const goToDashboardBtn = document.getElementById('btn-go-dashboard');
+
+    // --- ADD THIS ENTIRE BLOCK FOR THE PRIVACY POLICY POPUP ---
+    const privacyTriggers = document.querySelectorAll('[data-modal-target="privacy-policy-modal"]');
+    const privacyModal = document.getElementById('privacy-policy-modal');
+    if (privacyModal) {
+        const privacyModalCloseBtn = privacyModal.querySelector('.modal-close-btn');
+
+        const openPrivacyModal = () => {
+            privacyModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        };
+
+        const closePrivacyModal = () => {
+            privacyModal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore background scrolling
+        };
+
+        // Attach listener to all privacy policy buttons/links
+        privacyTriggers.forEach(trigger => {
+            trigger.addEventListener('click', openPrivacyModal);
+        });
+
+        // Attach listener to the close 'X' button inside the modal
+        if (privacyModalCloseBtn) {
+            privacyModalCloseBtn.addEventListener('click', closePrivacyModal);
+        }
+
+        // Attach listener to close the modal by clicking the background overlay
+        privacyModal.addEventListener('click', (event) => {
+            if (event.target === privacyModal) {
+                closePrivacyModal();
+            }
+        });
+
+        // Attach listener to close the modal by pressing the Escape key
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !privacyModal.classList.contains('hidden')) {
+                closePrivacyModal();
+            }
+        });
+    }
+    // --- END OF THE NEW BLOCK ---
 
 
     // --- 2. Navigation Functions ---
@@ -125,27 +167,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // UPDATED: Form submission logic
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         validateStep3();
         if (!finishBtn.disabled) {
-            // In a real app, this is where you'd send data to the server
             const fullPhoneNumber = phoneInputInstance.getNumber();
             console.log('Account created! Full number:', fullPhoneNumber);
 
-            // Show the success modal instead of an alert
             if(successModal) {
                 successModal.classList.remove('hidden');
             }
         }
     });
 
-    // NEW: Handle modal button click
     if (goToDashboardBtn) {
         goToDashboardBtn.addEventListener('click', () => {
-            // Redirect to the dashboard page
-            // Replace with your actual dashboard URL
             window.location.href = 'dashboard.html'; 
         });
     }

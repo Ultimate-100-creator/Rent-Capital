@@ -1,0 +1,546 @@
+/* ==========================================================================
+   Root Variables & Global Styles
+   ========================================================================== */
+:root {
+    --color-primary-green: #4CAF50;
+    --color-primary-green-dark: #45a049;
+    --color-dark-blue-text: #0d243d;
+    --color-text-secondary: #6b7280;
+    --color-border-gray: #d1d5db;
+    --color-light-gray-bg: #f9fafb;
+    --color-light-green-bg: #dcfce7;
+    --color-border-light: #f3f4f6;
+    --font-sans: 'Poppins', sans-serif;
+    --color-disabled-bg: #e5e7eb;
+    --color-disabled-text: #9ca3af;
+}
+body {
+    font-family: var(--font-sans);
+    background-color: #ffffff;
+    color: var(--color-dark-blue-text);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==========================================================================
+   Main Layout & Decorative Blobs
+   ========================================================================== */
+.signup-main-container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.background-blob {
+    position: fixed;
+    z-index: -1;
+    border-radius: 50%;
+    transition: all 0.4s ease-out;
+}
+
+.blob-right-large {
+    width: 65vw;
+    height: 110vh;
+    max-width: 800px;
+    background-color: var(--color-primary-green);
+    top: -5vh;
+    right: -30vw;
+}
+
+.blob-bottom-left-wave {
+    width: 100vw;
+    height: 50vh;
+    background-color: var(--color-light-green-bg);
+    bottom: -30vh;
+    left: -20vw;
+    transform: rotate(15deg);
+}
+
+.blob-middle-left-small {
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-light-green-bg);
+    top: 55%;
+    left: 12%;
+}
+
+
+/* ==========================================================================
+   Content Wrapper & Step Transitions
+   ========================================================================== */
+.signup-content-wrapper {
+    max-width: 650px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.signup-step {
+    width: 100%;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================================================
+   Step Header: Back Button & Progress Bar
+   ========================================================================== */
+.step-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.btn-back {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--color-primary-green);
+    font-size: 0.875rem;
+    padding: 0.5rem;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    flex-grow: 1;
+    margin-left: 2rem;
+    max-width: 320px;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background-color: var(--color-border-light);
+    z-index: -1;
+    transform: translateY(-50%);
+}
+
+.progress-bar .step {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid var(--color-border-gray);
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-bar .step.active,
+.progress-bar .step.completed {
+    border-color: var(--color-primary-green);
+    background-color: var(--color-primary-green);
+}
+
+.step-icon { /* A container for the checkmark */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-icon svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    fill: white;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 0.3s ease-out 0.2s;
+}
+
+.step.completed .step-icon svg {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+/* ==========================================================================
+   Content Header Typography
+   ========================================================================== */
+.content-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.content-header h1 {
+    font-size: 2.125rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-dark-blue-text);
+}
+
+.content-header p {
+    margin: 1rem auto 0 auto;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================================================
+   Step 1: Location Form
+   ========================================================================== */
+.location-form {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+}
+
+.form-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 1px solid var(--color-border-gray);
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background-color: #fcfdfe;
+}
+
+.btn-use-location {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-primary-green);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-use-location .spinner {
+    animation: spin 1s linear infinite;
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+}
+
+
+/* ==========================================================================
+   Step 2: Rental Type Grid
+   ========================================================================== */
+.rental-type-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.rental-type-option {
+    background-color: white;
+    border: 1px solid var(--color-border-gray);
+    border-radius: 9999px;
+    padding: 0.6rem 1.25rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.rental-type-option:hover {
+    border-color: var(--color-primary-green);
+    color: var(--color-primary-green);
+}
+
+.rental-type-option.active {
+    background-color: var(--color-primary-green);
+    border-color: var(--color-primary-green);
+    color: white;
+}
+
+
+/* ==========================================================================
+   Step 3: Rental Criteria Form
+   ========================================================================== */
+.criteria-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.criteria-group {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.criteria-label {
+    font-weight: 500;
+    color: var(--color-dark-blue-text);
+    min-width: 80px;
+    text-align: left;
+}
+
+.options-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.criteria-option {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border-gray);
+    background: white;
+    color: var(--color-dark-blue-text);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.criteria-option:hover {
+    border-color: var(--color-primary-green);
+}
+
+.criteria-option.active {
+    background-color: var(--color-primary-green);
+    color: white;
+    border-color: var(--color-primary-green);
+}
+
+/* --- Range Slider & Toggle --- */
+.range-group,
+.toggle-group {
+    align-items: flex-start;
+    padding-top: 0.5rem;
+}
+
+.range-slider-container {
+    flex-grow: 1;
+}
+
+.range-output {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.price-value {
+    font-weight: 600;
+    color: var(--color-primary-green);
+}
+
+.price-label {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+input[type="range"] {
+    -webkit-appearance: none; appearance: none;
+    width: 100%; height: 4px;
+    background: var(--color-border-light);
+    border-radius: 2px; outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 20px; height: 20px;
+    background: white; border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer; margin-top: -8px;
+}
+input[type="range"]::-moz-range-thumb {
+    width: 20px; height: 20px;
+    background: white; border-radius: 50%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer; border: none;
+}
+
+.toggle-container {
+    display: flex; align-items: center; gap: 1rem;
+}
+.toggle-switch {
+    position: relative; display: inline-block;
+    width: 50px; height: 28px;
+}
+.toggle-switch input {
+    opacity: 0; width: 0; height: 0;
+}
+.toggle-switch .slider {
+    position: absolute; cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: var(--color-border-gray);
+    transition: .3s; border-radius: 28px;
+}
+.toggle-switch .slider:before {
+    position: absolute; content: "";
+    height: 20px; width: 20px;
+    left: 4px; bottom: 4px;
+    background-color: white;
+    transition: .3s; border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.toggle-switch input:checked+.slider {
+    background-color: var(--color-primary-green);
+}
+.toggle-switch input:checked+.slider:before {
+    transform: translateX(22px);
+}
+
+
+/* ==========================================================================
+   Footer & Primary Button
+   ========================================================================== */
+.content-footer {
+    text-align: center;
+    margin-top: 3.5rem;
+}
+
+.btn.btn-primary {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    background-color: var(--color-primary-green);
+    color: white;
+    cursor: pointer;
+}
+
+.btn-primary:disabled {
+    background-color: var(--color-disabled-bg);
+    color: var(--color-disabled-text);
+    cursor: not-allowed;
+}
+
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+/* --- Tablet devices (<= 1024px) --- */
+@media (max-width: 1024px) {
+    /* Make decorative blobs less intrusive */
+    .blob-right-large {
+        right: -45vw;
+    }
+    .blob-middle-left-small {
+        left: 5%;
+        opacity: 0.7;
+    }
+}
+
+/* --- Mobile devices (<= 640px) --- */
+@media (max-width: 640px) {
+    /* Hide all decorative blobs to maximize content visibility */
+    .background-blob {
+        display: none;
+    }
+
+    /* Adjust main container for a more app-like feel */
+    .signup-main-container {
+        align-items: flex-start;
+        padding: 1.5rem 1rem;
+    }
+
+    /* Stack the step header vertically */
+    .step-header {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+    }
+
+    /* Make the progress bar span the full width */
+    .progress-bar {
+        width: 100%;
+        margin-left: 0;
+        max-width: none;
+        justify-content: space-between;
+        gap: 1rem; /* Reduce gap between steps on small screens */
+    }
+
+    /* Adjust typography for better readability */
+    .content-header h1 {
+        font-size: 1.75rem;
+    }
+    .content-header p {
+        font-size: 0.95rem;
+    }
+
+    /* Stack criteria form groups vertically */
+    .criteria-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .criteria-label {
+        min-width: auto;
+    }
+
+    /* Adjust main action button padding */
+    .btn.btn-primary {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

@@ -61,9 +61,9 @@
                     </div>
                     <button type="button" class="btn btn-primary btn-full" id="btn-email-continue" disabled>Continue with Email</button>
                     <div class="separator">Or</div>
-                    <button type="button" class="btn btn-secondary btn-full btn-social"><img src="https://i.imgur.com/512KaY1.png" alt="Google icon"> Continue with Google</button>
-                    <button type="button" class="btn btn-secondary btn-full btn-social"><img src="https://i.imgur.com/e5g0Q62.png" alt="Apple icon"> Continue with Apple</button>
-                    <p class="form-terms">By creating an account you are agreeing to our <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</p>
+                    <button type="button" class="btn btn-secondary btn-full btn-social"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google icon"> Continue with Google</button>
+                    <button type="button" class="btn btn-secondary btn-full btn-social"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple icon"> Continue with Apple</button>
+                    <p class="form-terms">By creating an account you are agreeing to our <a href="#">Terms of Use</a> and <button type="button" class="link-like-button" data-modal-target="privacy-policy-modal">Privacy Policy</button>.</p>
                 </div>
 
                 <!-- Step 2: Personal & Company Details -->
@@ -88,9 +88,7 @@
                             <div class="password-wrapper">
                                 <input type="password" id="password" class="form-input" placeholder="Enter your password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
                                 <button type="button" class="password-toggle" aria-label="Show password">
-                                    <!-- Show Icon (Visible by default) -->
                                     <svg class="icon-show" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Z"/></svg>
-                                    <!-- Hide Icon (Hidden by default) -->
                                     <svg class="icon-hide hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M528-480q-20-0-34-14t-14-34q0-20 14-34t34-14q20 0 34 14t14 34q0 20-14 34t-34 14Zm-48 240-60-60q-12 5-25 7.5t-27 2.5q-75 0-127.5-52.5T180-500q0-44 20-80.5t52-61.5L192-702q-51 34-93 88t-63 114q54 137 174 218.5T480-200q61 0 119-14t111-40ZM852-66 312-606l42-42 540 540-42 42Zm-102-102-60-60q21-27 34-56.5t16-61.5q0-75-52.5-127.5T480-680q-32 0-61 9.5T366-648L306-708q44-24 93-35.5t105-11.5q146 0 266 81.5T920-500q-21 53-53 98.5t-74 81.5Z"/></svg>
                                 </button>
                             </div>
@@ -100,16 +98,14 @@
                              <div class="password-wrapper">
                                 <input type="password" id="confirmPassword" class="form-input" placeholder="Enter your password" required>
                                 <button type="button" class="password-toggle" aria-label="Show password">
-                                    <!-- Show Icon (Visible by default) -->
                                     <svg class="icon-show" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Z"/></svg>
-                                    <!-- Hide Icon (Hidden by default) -->
                                     <svg class="icon-hide hidden" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M528-480q-20-0-34-14t-14-34q0-20 14-34t34-14q20 0 34 14t14 34q0 20-14 34t-34 14Zm-48 240-60-60q-12 5-25 7.5t-27 2.5q-75 0-127.5-52.5T180-500q0-44 20-80.5t52-61.5L192-702q-51 34-93 88t-63 114q54 137 174 218.5T480-200q61 0 119-14t111-40ZM852-66 312-606l42-42 540 540-42 42Zm-102-102-60-60q21-27 34-56.5t16-61.5q0-75-52.5-127.5T480-680q-32 0-61 9.5T366-648L306-708q44-24 93-35.5t105-11.5q146 0 266 81.5T920-500q-21 53-53 98.5t-74 81.5Z"/></svg>
                                 </button>
                             </div>
                         </div>
                     </div>
                     <p class="password-hint">Password must be at least 8 characters and contain 1 number, both upper & lowercase letters</p>
-                    <div class="checkbox-group"><input type="checkbox" id="terms" required><label for="terms">I agree to the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</label></div>
+                    <div class="checkbox-group"><input type="checkbox" id="terms" required><label for="terms">I agree to the <a href="#">Terms of Use</a> and <button type="button" class="link-like-button" data-modal-target="privacy-policy-modal">Privacy Policy</button>.</label></div>
                     <div class="checkbox-group"><input type="checkbox" id="sms"><label for="sms">I agree to receive SMS marketing communications.</label></div>
                     <button type="submit" class="btn btn-primary btn-full" id="btn-finish" disabled>Create Account</button>
                 </div>
@@ -117,16 +113,202 @@
         </div>
     </main>
 
-    <!-- NEW: Success Modal -->
+    <!-- Success Modal -->
     <div class="modal-overlay hidden" id="success-modal">
         <div class="modal-content">
             <div class="modal-icon">
-                <!-- Checkmark SVG -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/></svg>
             </div>
             <h2 class="modal-title">Account Created!</h2>
             <p class="modal-text">Your account has been successfully created. You can now proceed to your landlord dashboard.</p>
             <button class="btn btn-primary" id="btn-go-dashboard">Go to Dashboard</button>
+        </div>
+    </div>
+    
+     <!-- Privacy Policy Modal -->
+    <div class="modal-overlay hidden" id="privacy-policy-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Privacy Policy</h2>
+                <button class="modal-close-btn" aria-label="Close modal">×</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Effective Date:</strong> [Insert Date]</p>
+                <p><strong>Last Updated:</strong> [Insert Date]</p>
+                <p>Welcome to Rent Capital, a digital platform provided by Rent Capital Technologies Ltd, a registered company in Nigeria. This Privacy Policy describes how we collect, use, disclose, and protect your personal information when you use our mobile application, website, and services (“Services”).</p>
+                <p>By using our App, you consent to the data practices described in this Privacy Policy. If you do not agree with the terms, please do not use our Services.</p>
+
+                <h3>1. Introduction</h3>
+                <p>Rent Capital is a property management and rental payment platform designed to make renting easier, safer, and more flexible for tenants, landlords, property managers, and property management companies. We facilitate features such as:</p>
+                <ul>
+                    <li>Rent payment scheduling and tracking</li>
+                    <li>Auto-debit savings for rent payments</li>
+                    <li>Shared credit wallets</li>
+                    <li>Internal communication</li>
+                    <li>Maintenance and repair notifications</li>
+                    <li>Managerial and tenant permission settings</li>
+                    <li>Real-time property and tenant status dashboards</li>
+                </ul>
+
+                <h3>2. Information We Collect</h3>
+                <p>We collect several types of information for various purposes to provide and improve our Service.</p>
+                <h4>a. Personal Information</h4>
+                <p>When you create an account or use features of our App, we may collect:</p>
+                <ul>
+                    <li>Full Name</li>
+                    <li>Phone Number</li>
+                    <li>Email Address</li>
+                    <li>Residential or Business Address</li>
+                    <li>Gender and Date of Birth (for verification)</li>
+                    <li>National ID or BVN (where applicable)</li>
+                    <li>Profile photos or logos</li>
+                    <li>Emergency contacts</li>
+                </ul>
+                <h4>b. Financial and Transaction Data</h4>
+                <p>To facilitate payments and savings, we collect:</p>
+                <ul>
+                    <li>Bank Account Information</li>
+                    <li>Debit Card or Payment Method Details</li>
+                    <li>Wallet Credit Activity (sent and received)</li>
+                    <li>Payment Records</li>
+                    <li>Scheduled Auto-Debit Preferences</li>
+                    <li>Escrow account payment tracking</li>
+                </ul>
+                <h4>c. Tenant-Landlord Relationship Data</h4>
+                <ul>
+                    <li>Tenancy start and end dates</li>
+                    <li>Rental property address and type</li>
+                    <li>Rent amounts and service charges</li>
+                    <li>Maintenance or repair requests</li>
+                    <li>Payment receipt logs</li>
+                    <li>Reason for tenant departure (requested via token, with tenant consent)</li>
+                </ul>
+                <h4>d. Device & Usage Data</h4>
+                <p>To improve app performance and user experience:</p>
+                <ul>
+                    <li>IP Address</li>
+                    <li>Device Type, Operating System</li>
+                    <li>App Version</li>
+                    <li>Date and time of use</li>
+                    <li>Usage logs and error/crash data</li>
+                </ul>
+
+                <h3>3. How We Use Your Information</h3>
+                <p>We use your information to:</p>
+                <ul>
+                    <li>Create and manage user accounts</li>
+                    <li>Process rent payments, savings, and remittances</li>
+                    <li>Track rent history and provide receipts</li>
+                    <li>Enable property owners to monitor apartments and assign managers</li>
+                    <li>Allow sharing of credit within app wallets</li>
+                    <li>Generate rental reports and analytics</li>
+                    <li>Notify users of upcoming rent, maintenance needs, or service charge deadlines</li>
+                    <li>Send internal messages, alerts, and announcements</li>
+                    <li>Prevent fraud and ensure compliance with policies</li>
+                </ul>
+
+                <h3>4. Legal Basis for Processing</h3>
+                <p>We collect and process your data based on:</p>
+                <ul>
+                    <li>Your consent (when you sign up or agree to specific features)</li>
+                    <li>The performance of a contract (e.g., rental agreements)</li>
+                    <li>Compliance with legal obligations (e.g., financial regulations)</li>
+                    <li>Our legitimate interest (e.g., enhancing user experience, fraud prevention)</li>
+                </ul>
+
+                <h3>5. Account Linking & Deletion Policy</h3>
+                <p>In cases where a tenant’s account is connected to a landlord or property manager:</p>
+                <ul>
+                    <li>Tenants cannot unilaterally delete or unlink such accounts without prior notice and mutual consent.</li>
+                    <li>Both tenant and landlord must acknowledge and agree to terminate such a connection.</li>
+                    <li>The system ensures accountability and transparency for both parties involved.</li>
+                    <li>Property owners may request limited background data about previous tenancies, subject to consent and token access.</li>
+                </ul>
+
+                <h3>6. Sharing and Disclosure of Information</h3>
+                <p>We do not sell or rent your personal data. However, we may share data as follows:</p>
+                <h4>a. With Your Consent</h4>
+                <p>We may share information with third parties when you have given us explicit consent.</p>
+                <h4>b. With Service Providers</h4>
+                <ul>
+                    <li>Payment processors</li>
+                    <li>Data storage providers</li>
+                    <li>ID verification partners</li>
+                    <li>Notification services (SMS, email, push)</li>
+                </ul>
+                <h4>c. For Legal Reasons</h4>
+                <p>We may disclose information if:</p>
+                <ul>
+                    <li>Required by law or regulation</li>
+                    <li>Necessary to protect our legal rights or comply with judicial processes</li>
+                    <li>Needed to enforce our Terms of Service</li>
+                </ul>
+
+                <h3>7. Data Security</h3>
+                <p>We implement administrative, technical, and physical security measures to protect your data:</p>
+                <ul>
+                    <li>End-to-end encryption of financial data</li>
+                    <li>Multi-layer authentication and access control</li>
+                    <li>Regular data backups and monitoring</li>
+                    <li>Limited internal access to sensitive data</li>
+                </ul>
+                <p>Despite these efforts, no method of transmission over the Internet is 100% secure. You use our Services at your own risk.</p>
+
+                <h3>8. Data Retention</h3>
+                <p>We retain your data as long as your account is active or as needed to:</p>
+                <ul>
+                    <li>Provide the services described</li>
+                    <li>Comply with legal obligations</li>
+                    <li>Resolve disputes</li>
+                    <li>Enforce our agreements</li>
+                </ul>
+                <p>Once retention is no longer necessary, your data will be securely deleted or anonymized.</p>
+
+                <h3>9. Your Rights & Choices</h3>
+                <p>Subject to Nigerian law and applicable international regulations (e.g., GDPR if users are abroad), you have the right to:</p>
+                <ul>
+                    <li>Access your personal data</li>
+                    <li>Update or correct your personal information</li>
+                    <li>Request data portability</li>
+                    <li>Object to or restrict certain data processing</li>
+                    <li>Request deletion of your account (subject to account link conditions)</li>
+                </ul>
+                <p>To exercise any of these rights, contact us at [Insert Contact Email].</p>
+
+                <h3>10. Cookies and Tracking</h3>
+                <p>While our mobile App does not use browser cookies, we may use anonymous analytics tools to:</p>
+                <ul>
+                    <li>Track user behavior</li>
+                    <li>Diagnose problems</li>
+                    <li>Improve functionality</li>
+                </ul>
+
+                <h3>11. Children’s Privacy</h3>
+                <p>Our Services are not intended for children under the age of 18. We do not knowingly collect personal information from minors.</p>
+
+                <h3>12. International Users</h3>
+                <p>Although Rent Capital operates in Nigeria, some users or service providers may be based in other countries. If you are accessing our platform from outside Nigeria, please note that your data may be processed in Nigeria or in other locations where our partners operate.</p>
+
+                <h3>13. Updates to This Privacy Policy</h3>
+                <p>We may revise this Privacy Policy to reflect changes in technology, legal requirements, or our operations. You will be notified via the app or email when significant changes are made. Please review it periodically.</p>
+
+                <h3>14. Contact Us</h3>
+                <p>If you have any questions, complaints, or concerns about this Privacy Policy or our data practices, you may contact us at:</p>
+                <p>
+                    Rent Capital Technologies Ltd<br>
+                    [Insert Registered Company Address]<br>
+                    Email: [Insert Official Email Address]<br>
+                    Phone: [Insert Contact Number]
+                </p>
+
+                <h3>15. Regulatory Compliance</h3>
+                <p>This Privacy Policy is structured to comply with:</p>
+                <ul>
+                    <li>Nigeria Data Protection Regulation (NDPR)</li>
+                    <li>Google Play and Apple App Store Developer Policies</li>
+                    <li>Relevant international privacy standards (where applicable)</li>
+                </ul>
+            </div>
         </div>
     </div>
 

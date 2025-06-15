@@ -1,0 +1,210 @@
+/* signup.css (Updated) */
+
+/* --- Global & Variable Setup --- */
+:root {
+    --color-primary-green: #4CAF50;
+    --color-primary-green-dark: #45a049;
+    --color-dark-blue-text: #0d243d;
+    --color-text-secondary: #6b7280; /* gray-500 */
+    --color-border-gray: #d1d5db; /* gray-300 */
+    --color-light-gray-bg: #f9fafb; /* gray-50 */
+    --color-light-green-bg: #dcfce7;
+    --font-sans: 'Poppins', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body.signup-page {
+    font-family: var(--font-sans);
+    background-color: var(--color-light-gray-bg);
+    color: var(--color-dark-blue-text);
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Decorative Blobs (Add this section if missing from your file) --- */
+.background-blob {
+    position: fixed;
+    border-radius: 50%;
+    background-color: var(--color-light-green-bg);
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+}
+.blob-top-left { top: -150px; left: -250px; width: 500px; height: 500px; }
+.blob-bottom-right { bottom: -200px; right: -250px; width: 450px; height: 450px; }
+.blob-bottom-left-small { bottom: 15vh; left: 8vw; width: 100px; height: 100px; opacity: 0.5; }
+
+.btn-signin {
+    background-color: white;
+}
+
+.btn-signin:hover {
+    background-color: var(--color-primary-green);
+}
+
+
+/* --- Main Content --- */
+.signup-main {
+    flex-grow: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem; /* Added horizontal padding for safety */
+    margin-top: 12.5%;
+}
+.content-wrapper { 
+    width: 100%;
+    max-width: 900px; 
+}
+.content-header { text-align: center; margin-bottom: 3rem; }
+.content-header h1 { font-size: 2rem; font-weight: 700; }
+.content-header p { margin-top: 0.5rem; color: var(--color-text-secondary); font-size: 1.125rem; }
+
+/* --- Account Type Cards --- */
+.account-type-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    justify-content: center;
+}
+.account-card {
+    background-color: white;
+    border: 2px solid var(--color-border-gray);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.account-card:hover {
+    border-color: var(--color-primary-green);
+}
+.account-card.active {
+    border-color: var(--color-primary-green);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+    transform: translateY(-5px);
+}
+.card-pills { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; font-size: 0.875rem; }
+.pill { padding: 0.25rem 0.75rem; border-radius: 9999px; font-weight: 500; transition: all 0.2s ease-in-out; }
+.pill-gray { background-color: #f3f4f6; color: #4b5563; }
+.pill-green { background-color: var(--color-light-green-bg); color: var(--color-primary-green); }
+.account-card.active .pill-gray {
+    background-color: var(--color-light-green-bg);
+    color: var(--color-primary-green);
+}
+.pill-icon {
+    width: 1.25rem; height: 1.25rem; border-radius: 50%;
+    border: 1.5px solid var(--color-border-gray);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; color: var(--color-text-secondary);
+}
+.card-icon-bg {
+    width: 4rem; height: 4rem; border-radius: 50%;
+    background-color: var(--color-light-green-bg);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1rem auto;
+}
+.card-icon-bg svg { width: 2rem; height: 2rem; fill: var(--color-primary-green); }
+.card-title { font-size: 1.25rem; font-weight: 600; }
+.card-subtitle { color: var(--color-text-secondary); margin-top: 0.25rem; }
+
+/* --- Content Footer --- */
+.content-footer { text-align: center; margin-top: 3rem; }
+.content-footer p { color: var(--color-text-secondary); }
+.content-footer p strong { color: var(--color-dark-blue-text); font-weight: 600; text-decoration: underline; }
+
+.btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem 4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+.btn-primary:disabled {
+    background-color: #e5e7eb;
+    color: #a1a1aa;
+    cursor: not-allowed;
+}
+.btn-primary:not(:disabled) {
+    background-color: var(--color-primary-green);
+    color: white;
+}
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-green-dark);
+}
+
+/* --- Animation --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.signup-container.content-wrapper {
+    animation: fadeIn 0.7s ease-out forwards;
+}
+
+
+/* --- Responsive Styles --- */
+@media (min-width: 768px) {
+    .account-type-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+@media (min-width: 900px) {
+    .account-type-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 100%;
+    }
+}
+
+/* --- NEW: Additional styles for smaller devices --- */
+
+/* --- Tablet and smaller (<= 767px) --- */
+@media (max-width: 767px) {
+    /* Hide smallest decorative blob to reduce clutter */
+    .blob-bottom-left-small {
+        display: none;
+    }
+}
+
+/* --- Mobile devices (<= 600px) --- */
+@media (max-width: 600px) {
+    /* Hide all decorative blobs on mobile */
+    .background-blob {
+        display: none;
+    }
+
+    /* Hide the text in the header to prevent wrapping */
+    .header-container .signup-prompt span {
+        display: none;
+    }
+    
+    .signup-main {
+        padding: 1.5rem 1rem; /* Reduce vertical padding on mobile */
+    }
+
+    .content-header {
+        margin-bottom: 2rem; /* Reduce space below header */
+    }
+
+    /* Adjust typography for smaller screens */
+    .content-header h1 {
+        font-size: 1.75rem;
+    }
+    .content-header p {
+        font-size: 1rem;
+    }
+
+    .content-footer {
+        margin-top: 2rem; /* Reduce space above footer */
+    }
+}

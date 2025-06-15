@@ -1,0 +1,199 @@
+/* Import variables and global styles to maintain consistency */
+@import url('code.css');
+
+/* =================================== */
+/* 1. Features Page Hero Section      */
+/* =================================== */
+.features-hero-section {
+    background-color: var(--color-light-gray);
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.features-hero-section .container {
+    max-width: 768px; /* max-w-3xl */
+}
+
+.features-hero-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--color-dark-blue);
+    line-height: 1.2;
+}
+
+.features-hero-subtitle {
+    margin-top: 1.5rem;
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+
+/* =================================== */
+/* 2. Feature Tab Navigation           */
+/* =================================== */
+.feature-tabs-section {
+    padding-top: 5rem;
+    background-color: white;
+}
+
+/* In styles/features.css */
+
+.feature-tabs-nav {
+    display: flex;
+    /* CHANGE 1: Start tabs from the left for a natural scrolling start point */
+    justify-content: flex-start;
+    /* CHANGE 2: Prevent the tabs from wrapping onto a new line */
+    flex-wrap: nowrap;
+    /* CHANGE 3: Allow horizontal scrolling on overflow */
+    overflow-x: auto;
+    /* Bonus: Add smooth momentum-based scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    
+    /* These properties hide the scrollbar for a cleaner look */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+
+    border-bottom: 2px solid var(--color-border-gray);
+    margin-bottom: -2px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.feature-tabs-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.feature-tab-btn {
+    background-color: transparent;
+    border: none;
+    border-bottom: 4px solid transparent;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    /* ADD THIS: Prevents the buttons from shrinking to fit */
+    flex-shrink: 0;
+}
+
+.feature-tab-btn:hover {
+    color: var(--color-dark-blue);
+}
+
+.feature-tab-btn.active {
+    color: var(--color-primary-green);
+    border-bottom-color: var(--color-primary-green);
+}
+
+.feature-tab-content .feature-section {
+    padding: 5rem 0 3rem 0; /* Adjust padding for content inside tabs */
+}
+
+/* =================================== */
+/* 3. Feature Tab Content Panes        */
+/* =================================== */
+.feature-tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.feature-tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =================================== */
+/* 4. Icon Grid Section Title         */
+/* =================================== */
+.icon-grid-section {
+    background-color: var(--color-light-gray);
+    padding: 5rem 0;
+}
+
+.icon-grid-section .section-title {
+    margin-bottom: 3.5rem;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-dark-blue);
+    text-align: center;
+}
+
+/* =================================== */
+/* 5. Final CTA Section               */
+/* =================================== */
+.cta-banner-section {
+    background-color: var(--color-dark-blue);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.cta-banner-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.cta-banner-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 0.5rem;
+    font-size: 1.125rem;
+}
+
+.cta-banner-btn {
+    margin-top: 2rem;
+    background-color: white;
+    color: var(--color-dark-blue);
+    font-size: 1.125rem;
+    padding: 0.75rem 2.5rem;
+}
+
+.cta-banner-btn:hover {
+    background-color: var(--color-primary-green);
+    color: white;
+}
+
+
+/* =================================== */
+/* 6. Responsive Adjustments           */
+/* =================================== */
+@media (min-width: 768px) {
+    .features-hero-title {
+        font-size: 3.5rem;
+    }
+
+    .icon-grid-section .section-title,
+    .cta-banner-title {
+        font-size: 2.5rem;
+    }
+    
+    .feature-tab-btn {
+        font-size: 1.125rem;
+    }
+}
+
+/* In styles/features.css, at the bottom inside the media query */
+
+@media (min-width: 768px) {
+    .features-hero-title {
+        font-size: 3.5rem;
+    }
+
+    /* ... other rules ... */
+    
+    .feature-tab-btn {
+        font-size: 1.125rem;
+    }
+    
+    /* ADD THIS BLOCK: Re-center the tabs on desktop and disable scrolling */
+    .feature-tabs-nav {
+        justify-content: center;
+        overflow-x: hidden;
+    }
+}

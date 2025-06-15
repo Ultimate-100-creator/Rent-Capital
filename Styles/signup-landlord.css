@@ -1,0 +1,473 @@
+/* --- Global & Variable Setup --- */
+:root {
+    --color-primary-green: #4CAF50;
+    --color-primary-green-dark: #45a049;
+    --color-dark-blue-text: #0d243d;
+    --color-text-secondary: #6b7280;
+    --color-border-gray: #d1d5db;
+    --color-light-gray-bg: #f9fafb;
+    --color-light-green-bg: #dcfce7;
+    --color-disabled: #e5e7eb;
+    --font-sans: 'Poppins', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body.signup-page {
+    font-family: var(--font-sans);
+    background-color: var(--color-light-gray-bg);
+    color: var(--color-dark-blue-text);
+    position: relative;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Decorative Blobs --- */
+.background-blob {
+    position: fixed;
+    border-radius: 50%;
+    background-color: var(--color-light-green-bg);
+    z-index: -1;
+}
+.blob-top-left { top: -150px; left: -250px; width: 500px; height: 500px; }
+.blob-bottom-right { bottom: -200px; right: -250px; width: 450px; height: 450px; }
+
+
+/* --- Minimal Header --- */
+.minimal-header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.minimal-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--color-dark-blue-text);
+}
+.minimal-header .logo-icon { height: 2.5rem; width: auto; color: var(--color-primary-green); }
+.minimal-header .logo-text { font-size: 1.5rem; font-weight: 700; }
+.header-prompt { display: flex; align-items: center; gap: 1rem; color: var(--color-text-secondary); }
+
+
+/* --- Main Content & Form Container --- */
+.signup-form-main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    margin-top: 12.5%;
+}
+
+.signup-form-container {
+    width: 100%;
+    max-width: 600px; /* A reasonable max-width for a form */
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+
+.form-header {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Column for button, and one for progress bar */
+    align-items: center;
+    gap: 1.5rem; /* Space between button and progress bar */
+    margin-bottom: 2.5rem; /* The space that was below the progress bar */
+}
+
+.btn-back {
+    background-color: transparent;
+    border: none;
+    color: var(--color-text-secondary);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s, visibility 0.2s, color 0.2s;
+}
+.btn-back.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+.btn-back svg {
+    fill: currentColor;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.btn-back:hover {
+    color: var(--color-dark-blue-text);
+}
+@media (max-width: 400px) {
+    .btn-back span {
+       display: none;
+    }
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.step {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid var(--color-border-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+.step.active {
+    border-color: var(--color-primary-green);
+    background-color: var(--color-light-green-bg);
+}
+.step.completed {
+    border-color: var(--color-primary-green);
+    background-color: var(--color-primary-green);
+}
+.step-icon svg {
+    width: 1rem;
+    height: 1rem;
+    fill: white;
+}
+.progress-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--color-border-gray);
+    margin: 0 -5px;
+}
+
+/* --- Form Steps & General Styles --- */
+.hidden { display: none; }
+.form-step { animation: fadeIn 0.5s ease-out; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.step-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border-gray);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-input:focus {
+    outline: none;
+    border-color: var(--color-primary-green);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* --- Specific Field Styles --- */
+.password-wrapper {
+    position: relative;
+    display: flex;
+}
+.password-toggle {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--color-text-secondary);
+    display: flex; /* Helps center the SVG */
+    align-items: center;
+}
+/* ADDED: Style the SVGs inside the button */
+.password-toggle svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.password-hint {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+/* --- intl-tel-input Custom Styles --- */
+.iti { width: 100%; }
+.iti .form-input { padding-left: 58px; }
+.iti__country-list {
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border-gray);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.iti__country { padding: 0.6rem 1rem; }
+.iti__country.iti__active { background-color: var(--color-light-green-bg); }
+.iti__country:hover { background-color: #f3f4f6; }
+.iti--allow-dropdown .iti__input:focus {
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2) !important;
+    border-color: var(--color-primary-green) !important;
+}
+.iti__dial-code { color: var(--color-text-secondary); }
+.iti__country-name { color: var(--color-dark-blue-text); }
+/* --- End of intl-tel-input styles --- */
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+.checkbox-group label { margin-bottom: 0; font-weight: 400; }
+.checkbox-group a {
+    color: var(--color-primary-green);
+    text-decoration: none;
+    font-weight: 500;
+}
+.separator {
+    text-align: center;
+    color: var(--color-text-secondary);
+    margin: 1.5rem 0;
+    position: relative;
+}
+.separator::before, .separator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: var(--color-border-gray);
+}
+.separator::before { left: 0; }
+.separator::after { right: 0; }
+.form-terms {
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--color-text-secondary);
+    margin-top: 1.5rem;
+}
+.form-terms a { color: var(--color-dark-blue-text); }
+
+
+/* --- Buttons --- */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-border-gray);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+.btn-full { width: 100%; margin-top: 1rem; }
+.btn-primary {
+    background-color: var(--color-primary-green);
+    color: white;
+    border-color: var(--color-primary-green);
+}
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-green-dark);
+    border-color: var(--color-primary-green-dark);
+}
+.btn-secondary { background-color: white; color: var(--color-dark-blue-text); }
+.btn-secondary:hover { border-color: #9ca3af; }
+.btn-social img { height: 1.25rem; width: 1.25rem; }
+.btn:disabled {
+    background-color: var(--color-disabled);
+    border-color: var(--color-disabled);
+    color: #a1a1aa;
+    cursor: not-allowed;
+}
+
+/* --- Responsive --- */
+@media (min-width: 600px) {
+    .form-grid { grid-template-columns: 1fr 1fr; }
+    .form-group.full-width { grid-column: 1 / -1; }
+    .signup-form-container { padding: 2.5rem 3rem; }
+}
+
+/* --- NEW: Success Modal --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(13, 36, 61, 0.5); /* Use your --color-dark-blue-text with opacity */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    text-align: center;
+    max-width: 420px;
+    width: 100%;
+    transform: scale(0.95);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-overlay:not(.hidden) .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.modal-icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: var(--color-light-green-bg);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-icon svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--color-primary-green);
+}
+
+.modal-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--color-dark-blue-text);
+    margin-bottom: 0.75rem;
+}
+
+.modal-text {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+#btn-go-dashboard {
+    width: 100%;
+}
+
+/* --- Privacy Policy Modal --- */
+.link-like-button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: var(--color-dark-blue-text);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.link-like-button:hover {
+    color: var(--color-primary-green);
+}
+
+#privacy-policy-modal .modal-content {
+    background-color: white;
+    padding: 0;
+    max-width: 768px;
+    width: 95%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#privacy-policy-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--color-border-gray);
+    flex-shrink: 0;
+}
+
+#privacy-policy-modal .modal-close-btn {
+    position: static;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: var(--color-text-secondary);
+}
+#privacy-policy-modal .modal-close-btn:hover {
+    color: var(--color-dark-blue-text);
+}
+
+#privacy-policy-modal .modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    text-align: left;
+    line-height: 1.7;
+}
+
+#privacy-policy-modal .modal-body h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-dark-blue-text);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#privacy-policy-modal .modal-body p, 
+#privacy-policy-modal .modal-body li {
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+}

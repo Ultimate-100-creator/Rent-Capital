@@ -1,0 +1,199 @@
+/* style.css */
+
+/* ---------------------------------- */
+/* 11. Footer Area (Marquee, CTA, Main Footer) */
+/* ---------------------------------- */
+
+.site-footer-wrapper {
+    background-color: #f1f5f9; /* slate-100 */
+    color: var(--color-dark-blue);
+}
+
+/* Marquee Styles */
+.marquee {
+    background-color: var(--color-primary-green);
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+}
+.marquee-content {
+    display: flex;
+    animation: marquee-scroll 30s linear infinite;
+}
+.marquee-content p {
+    font-size: 1rem;
+}
+@keyframes marquee-scroll {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-100%); }
+}
+
+/* Pre-Footer CTA Styles */
+.pre-footer-cta {
+    background-color: var(--color-dark-blue); 
+    color: white;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+.pre-footer-cta .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+.pre-footer-title {
+    font-size: 2rem;
+    font-weight: 800;
+    max-width: 500px;
+}
+.btn-light-outline {
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
+}
+.btn-light-outline:hover {
+    background-color: white;
+    color: var(--color-dark-blue);
+}
+
+/* Main Footer Styles */
+.main-footer {
+    padding: 4rem 0;
+}
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+.footer-logo-column .logo {
+    justify-content: center;
+}
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.footer-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-dark-blue);
+    margin-bottom: -0.5rem;
+}
+.footer-heading.secondary {
+    margin-top: 1.5rem;
+}
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.footer-links a,
+.footer-links span {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid var(--color-border-gray);
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+.copyright {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+.app-stores {
+    display: flex;
+    gap: 1rem;
+}
+.app-stores img {
+    height: 40px;
+    width: auto;
+}
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+.social-links a {
+    color: var(--color-text-secondary);
+}
+.social-links a:hover {
+    color: var(--color-dark-blue);
+}
+.social-links svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: currentColor;
+}
+
+
+/* --- Footer Responsive Styles --- */
+@media (min-width: 768px) { /* md */
+    .pre-footer-cta {
+        padding: 5rem 1rem;
+    }
+    .pre-footer-cta .container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+    .pre-footer-title {
+        font-size: 2.25rem;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 2fr;
+        gap: 4rem;
+        text-align: left;
+    }
+    .footer-logo-column .logo {
+        justify-content: flex-start;
+    }
+    .footer-links-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .copyright {
+        order: 1;
+    }
+    .app-stores {
+        order: 2;
+    }
+    .social-links {
+        order: 3;
+    }
+}
+@media (min-width: 1024px) { /* lg */
+     .main-footer {
+        padding: 6rem 0;
+    }
+}

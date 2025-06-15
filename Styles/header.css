@@ -1,0 +1,299 @@
+/* === styles/header.css (Universal Version) === */
+
+/* ---------------------------------- */
+/* Header Component Styles            */
+/* ---------------------------------- */
+.site-header {
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem; /* Mobile first height */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.5rem;
+}
+.logo-icon {
+    height: 2.5rem;
+    width: auto;
+    color: var(--color-primary-green);
+}
+
+/* CHANGE: Logo text is now visible on ALL screen sizes by default */
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark-blue);
+    display: block; /* <-- This was changed from 'none' */
+}
+
+.desktop-nav {
+    display: none; /* Hidden on mobile */
+    margin: 0 auto;
+}
+
+/* ... (rest of the file is unchanged) ... */
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Auth buttons in the main header bar are hidden on mobile */
+.header-auth-desktop {
+    display: none;
+}
+.header-auth-desktop .btn {
+    padding: 0.5rem 1rem;
+}
+
+.mobile-menu-toggle {
+    display: block;
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+}
+.mobile-menu-toggle svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    stroke: var(--color-text-primary);
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+#menu-close-icon { display: none; }
+
+/* Mobile Dropdown Menu (for index.html) */
+.mobile-menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 4rem; /* Position below the header */
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-top: 1px solid var(--color-border-gray);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+}
+.site-header.mobile-menu-active .mobile-menu-dropdown {
+    display: block;
+}
+.mobile-dropdown-nav {
+    display: flex;
+    flex-direction: column;
+}
+.mobile-nav-link {
+    padding: 0.75rem 0.5rem;
+    border-radius: 0.25rem;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+.mobile-nav-link:hover {
+    background-color: var(--color-light-gray);
+}
+.mobile-dropdown-actions {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border-gray);
+    display: flex;
+    gap: 1rem;
+}
+.mobile-dropdown-actions .btn {
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Prompt for signin/signup pages */
+.header-prompt {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+}
+.header-prompt .btn-signup {
+    padding: 0.5rem 1.5rem;
+}
+
+/* === Responsive Header Rules === */
+
+/* REMOVED: The rule to show the logo text here is no longer needed */
+/* For small screens and up (e.g., larger phones) */
+@media (min-width: 480px) {
+    /* (This media query can be removed if there's nothing else in it) */
+}
+
+/* For tablet screens and up */
+@media (min-width: 768px) {
+    .header-container {
+        height: 5rem;
+    }
+    .header-prompt {
+        font-size: 1rem; /* Slightly larger prompt text */
+    }
+}
+
+/* For desktop screens (where main navigation appears) */
+@media (min-width: 1024px) {
+    .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .nav-link {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--color-text-secondary);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .nav-link:hover {
+        color: var(--color-dark-blue);
+    }
+    
+    .header-auth-desktop {
+        display: flex; /* Show the desktop login/signup buttons */
+        gap: 0.5rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: none; /* Hide the hamburger menu on desktop */
+    }
+
+    /* Hide the signin/signup page prompt on desktop, as it's not needed */
+    .header-prompt {
+        display: none;
+    }
+}
+
+/* --- Decorative Backgrounds --- */
+.background-blob {
+    position: fixed;
+    border-radius: 50%;
+    background-color: var(--color-light-green-bg);
+    z-index: -1;
+}
+.blob-top-left { top: -150px; left: -250px; width: 500px; height: 500px; }
+.blob-bottom-right { bottom: -200px; right: -250px; width: 450px; height: 450px; }
+.blob-bottom-left-small { bottom: 15vh; left: 8vw; width: 100px; height: 100px; opacity: 0.5; }
+
+/* --- Sign In Header --- */
+.signin-header {
+    padding: 1rem 0;
+    flex-shrink: 0; /* Prevents header from shrinking */
+}
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.signin-header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: var(--color-dark-blue-text); font-size: 1.25rem; font-weight: 700; }
+.logo svg { width: 2rem; height: 2rem; fill: var(--color-primary-green); }
+.signup-prompt { display: flex; align-items: center; gap: 1rem; color: var(--color-text-secondary); }
+.btn-signup,
+.btn-signin {
+    background-color: var(--color-primary-green);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.375rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* ---------------------------------- */
+/* 11. Search Overlay                 */
+/* ---------------------------------- */
+
+/* Style for the search icon button in the header */
+.header-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    padding: 0.5rem;
+    border-radius: 9999px;
+    transition: color 0.2s, background-color 0.2s;
+}
+.header-action-btn:hover {
+    color: var(--color-dark-blue);
+    background-color: var(--color-light-gray);
+}
+.header-action-btn svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* For desktop screens (where main navigation appears) */
+@media (min-width: 1024px) {
+    /* ... existing desktop rules ... */
+    
+    /* Hide the signin/signup page prompt on desktop, as it's not needed */
+    .header-prompt, .signup-prompt { /* Target both for consistency */
+        display: none;
+    }
+}
+
+/* --- NEW: Add this rule for mobile devices --- */
+@media (max-width: 500px) {
+    /* Hides the "Already have an account!" text on small screens */
+    .signup-prompt span {
+        display: none;
+    }
+}
+
+/* For desktop screens (where main navigation appears) */
+@media (min-width: 1024px) {
+    .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .nav-link {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--color-text-secondary);
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    .nav-link:hover {
+        color: var(--color-dark-blue);
+    }
+    
+    .header-auth-desktop {
+        display: flex; /* Show the desktop login/signup buttons */
+        gap: 0.5rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: none; /* Hide the hamburger menu on desktop */
+    }
+
+    /* This rule hides the prompt on the main site (e.g., index.html) on desktop */
+    .header-prompt, .signup-prompt {
+        display: none;
+    }
+
+    /* --- ADD THIS NEW RULE --- */
+    /* This rule OVERRIDES the one above, but only on pages with the .signup-page class */
+    .signup-page .signup-prompt {
+        display: flex !important; /* Use flex to show it again, !important ensures it wins */
+    }
+}
